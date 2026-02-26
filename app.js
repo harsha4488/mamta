@@ -4,10 +4,7 @@ const app = document.getElementById("app");
 const heroImages = [
   "images/mamta1.jpg",
   "images/mamta2.jpg",
-  "images/mamta3.jpg",
-  "images/mamta4.jpg",
-  "images/mamta5.jpg",
-  "images/mamta6.jpg",
+  "images/mamta3.jpg"
 ];
 
 let heroIndex = 0;
@@ -43,7 +40,7 @@ function productsSection() {
             <img src="${p.img}">
             <div class="card-content">
               <h3>${p.name}</h3>
-              <p>Best quality at affordable prices</p>
+              <p>Quality products at best prices</p>
             </div>
           </div>
         `).join("")}
@@ -54,7 +51,7 @@ function productsSection() {
 
 function gallery() {
   return `
-    <section id="gallery" class="section" style="background:#f7f7f7">
+    <section id="gallery" class="section">
       <h2>Our Store</h2>
       <div class="gallery">
         <img src="images/mamta1.jpg">
@@ -80,13 +77,11 @@ app.innerHTML = home() + productsSection() + gallery() + contact();
 
 /* HERO SLIDER */
 const hero = document.querySelector(".hero");
-hero.style.backgroundImage =
-  `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('${heroImages[0]}')`;
+hero.style.backgroundImage = `url('${heroImages[0]}')`;
 
 setInterval(() => {
   heroIndex = (heroIndex + 1) % heroImages.length;
-  hero.style.backgroundImage =
-    `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('${heroImages[heroIndex]}')`;
+  hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
 }, 4000);
 
 /* SCROLL ANIMATION */
@@ -94,8 +89,7 @@ const cards = document.querySelectorAll(".card");
 
 window.addEventListener("scroll", () => {
   cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
+    if (card.getBoundingClientRect().top < window.innerHeight - 100) {
       card.classList.add("show");
     }
   });

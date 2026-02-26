@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #fff;
+  background: #f9fafb;
   color: #333;
 }
 
@@ -19,15 +19,26 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #c1121f;
-  color: #fff;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1b4332;
 }
 
 .navbar a {
-  color: #fff;
+  color: #333;
   margin-left: 20px;
   text-decoration: none;
   font-weight: 500;
+}
+
+.navbar a:hover {
+  color: #40916c;
 }
 
 /* Hero */
@@ -43,6 +54,12 @@ body {
   transition: background-image 1.5s ease-in-out;
 }
 
+.hero-content {
+  background: rgba(0,0,0,0.55);
+  padding: 40px;
+  border-radius: 15px;
+}
+
 .hero-content h1 {
   font-size: 48px;
 }
@@ -53,12 +70,17 @@ body {
 }
 
 .btn {
-  background: #fca311;
-  padding: 12px 25px;
-  border-radius: 6px;
+  background: #52b788;
+  padding: 12px 28px;
+  border-radius: 8px;
   text-decoration: none;
-  color: #000;
+  color: white;
   font-weight: 600;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #40916c;
 }
 
 /* Sections */
@@ -70,24 +92,25 @@ body {
 .section h2 {
   font-size: 32px;
   margin-bottom: 20px;
+  color: #1b4332;
 }
 
 /* Cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
   margin-top: 40px;
 }
 
 .card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   overflow: hidden;
   transform: translateY(30px);
   opacity: 0;
-  transition: 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 .card.show {
@@ -105,29 +128,39 @@ body {
   padding: 20px;
 }
 
+.card-content h3 {
+  color: #2d6a4f;
+  margin-bottom: 8px;
+}
+
 .card:hover {
   transform: scale(1.05);
 }
 
 /* Gallery */
+#gallery {
+  background: linear-gradient(135deg, #edf6f9, #d8f3dc);
+}
+
 .gallery {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .gallery img {
-  width: 300px;
-  height: 220px;
+  width: 320px;
+  height: 230px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Footer */
 footer {
-  background: #111;
-  color: #fff;
+  background: #1b4332;
+  color: white;
   text-align: center;
   padding: 15px;
 }
