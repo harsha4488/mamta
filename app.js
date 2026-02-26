@@ -74,8 +74,8 @@ function contact() {
     <section id="contact" class="section">
       <h2>Visit Us</h2>
       <p>📍 Address: #10, 1st Main Rd, Vijayanagar 2nd stage, RPC Layout, Vijayanagar, Bengaluru, Karnataka 560104</p>
-      <p>📞 +91 06361450214</p>
-      <p>🕘 Open Daily: 9 AM – 10 PM</p>
+      <p>📞 +91-06361450214</p>
+      <p>🕘 Open Daily: 9 AM – 10 PM </p>
     </section>
   `;
 }
