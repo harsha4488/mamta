@@ -18,7 +18,8 @@ const products = [
   { name: "Snacks & Biscuits", img: "images/mamta_buscuits.jpg" },
   { name: "Soaps & Detergents", img: "images/mamta_detergent.jpg" },
   { name: "Soaps", img: "images/mamta_detergent_soap.jpg" },
-  { name: "noodles", img: "images/mamta_noodles.jpg" },
+  { name: "Noodles", img: "images/mamta_noodles.jpg" },
+  { name: "Tea & coffee", img: "images/mamta_tea.jpg" },
 
 
   { name: "Daily Essentials", img: "images/mamta2.jpg" }
