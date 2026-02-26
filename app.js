@@ -63,7 +63,6 @@ function gallery() {
       <h2>Our Store</h2>
       <div class="gallery">
         <img src="images/mamta1.jpg">
-        <img src="images/mamta3.jpg">
         <img src="images/mamta_card.jpg">
       </div>
     </section>
