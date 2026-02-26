@@ -2,18 +2,25 @@ const app = document.getElementById("app");
 
 /* HERO IMAGES */
 const heroImages = [
-  "images/mamta1.jpg",
+ "images/mamta1.jpg",
+  "images/mamta_god.jpg",
+  "images/mamta_aile.jpg",
+  "images/mamta3.jpg",
   "images/mamta2.jpg",
-  "images/mamta3.jpg"
+  "images/mamta4.jpg",
 ];
 
 let heroIndex = 0;
 
 /* DATA */
 const products = [
-  { name: "Rice & Grains", img: "images/mamta2.jpg" },
-  { name: "Snacks & Biscuits", img: "images/mamta3.jpg" },
-  { name: "Soaps & Detergents", img: "images/mamta4.jpg" },
+  { name: "Rice & Grains", img: "images/mamta_rice.jpg" },
+  { name: "Snacks & Biscuits", img: "images/mamta_buscuits.jpg" },
+  { name: "Soaps & Detergents", img: "images/mamta_detergent.jpg" },
+  { name: "Soaps", img: "images/mamta_detergent_soap.jpg" },
+  { name: "noodles", img: "images/mamta_noodles.jpg" },
+
+
   { name: "Daily Essentials", img: "images/mamta2.jpg" }
 ];
 
@@ -56,6 +63,7 @@ function gallery() {
       <div class="gallery">
         <img src="images/mamta1.jpg">
         <img src="images/mamta3.jpg">
+        <img src="images/mamta_card.jpg">
       </div>
     </section>
   `;
