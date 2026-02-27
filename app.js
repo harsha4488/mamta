@@ -27,7 +27,7 @@ function home() {
   return `
     <section id="home" class="hero">
       <div class="hero-content">
-        <h1>Everything You Need, Under One Roof</h1>
+        <h1>Mamta Store - Everything You Need, Under One Roof</h1>
         <p>Trusted Store in Vijayanagar, Bangalore</p>
         <a href="#products" class="btn">Shop Now</a>
       </div>
