@@ -6,24 +6,20 @@ const heroImages = [
   "images/snacks_buiscuits.jpg",
   "images/grocery.jpg",
   "images/soap.jpg"
-
 ];
 
 let heroIndex = 0;
 
-/* DATA */
+/* PRODUCTS */
 const products = [
   { name: "Rice & Grains", img: "images/rice.jpg" },
   { name: "Snacks & Biscuits", img: "images/snacks_buiscuits.jpg" },
   { name: "Detergents", img: "images/detergent.jpg" },
-  { name: "grocery", img: "images/grocery.jpg" },
+  { name: "Grocery", img: "images/grocery.jpg" },
   { name: "Soaps", img: "images/soap.jpg" },
-  { name: "Soaps", img: "images/soaps.jpg" },
   { name: "Noodles", img: "images/noodles.jpg" },
-  { name: "Shaving products", img: "images/shavingproducts.jpg" },
-  { name: "Daily Essentials", img: "images/beauty_products.jpg" },
-  { name: "Daily Essentials", img: "images/beauty_products1.jpg" },
-  { name: "Daily Essentials", img: "images/beauty_products3.jpg" }
+  { name: "Shaving Products", img: "images/shavingproducts.jpg" },
+  { name: "Daily Essentials", img: "images/beauty_products.jpg" }
 ];
 
 /* SECTIONS */
@@ -74,9 +70,13 @@ function contact() {
   return `
     <section id="contact" class="section">
       <h2>Visit Us</h2>
-      <p>📍 Address: #10, 1st Main Rd, Vijayanagar 2nd stage, RPC Layout, Vijayanagar, Bengaluru, Karnataka 560104</p>
-      <p>📞 +91 06361450214</p>
+      <p>📍 #10, 1st Main Rd, Vijayanagar 2nd Stage, Bengaluru 560104</p>
+      <p>📞 +91 6361450214</p>
       <p>🕘 Open Daily: 9 AM – 10 PM</p>
+
+      <a href="https://wa.me/916361450214" target="_blank" class="btn whatsapp-btn">
+        💬 Chat on WhatsApp
+      </a>
     </section>
   `;
 }

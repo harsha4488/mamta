@@ -27,7 +27,7 @@ body {
 .logo {
   font-size: 22px;
   font-weight: 700;
-  color: #1b4332;
+  color: #f97316;
 }
 
 .navbar a {
@@ -38,7 +38,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #40916c;
+  color: #fb923c;
 }
 
 /* Hero */
@@ -70,7 +70,7 @@ body {
 }
 
 .btn {
-  background: #52b788;
+  background: #f97316;
   padding: 12px 28px;
   border-radius: 8px;
   text-decoration: none;
@@ -80,7 +80,7 @@ body {
 }
 
 .btn:hover {
-  background: #40916c;
+  background: #ea580c;
 }
 
 /* Sections */
@@ -92,7 +92,7 @@ body {
 .section h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #1b4332;
+  color: #f97316;
 }
 
 /* Cards */
@@ -129,7 +129,7 @@ body {
 }
 
 .card-content h3 {
-  color: #2d6a4f;
+  color: #ea580c;
   margin-bottom: 8px;
 }
 
@@ -139,7 +139,7 @@ body {
 
 /* Gallery */
 #gallery {
-  background: linear-gradient(135deg, #edf6f9, #d8f3dc);
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
 }
 
 .gallery {
@@ -157,9 +157,14 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* WhatsApp Button */
+.whatsapp-btn {
+  margin-top: 25px;
+}
+
 /* Footer */
 footer {
-  background: #1b4332;
+  background: #f97316;
   color: white;
   text-align: center;
   padding: 15px;
