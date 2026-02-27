@@ -27,9 +27,9 @@ function home() {
   return `
     <section id="home" class="hero">
       <div class="hero-content">
-        <h1>Mamta Store - Everything You Need, Under One Roof</h1>
+        <h1>Everything You Need, Under One Roof</h1>
         <p>Trusted Store in Vijayanagar, Bangalore</p>
-        <a href="#products" class="btn">Shop Now</a>
+        <a href="#order" class="btn">Order Now</a>
       </div>
     </section>
   `;
@@ -66,6 +66,22 @@ function gallery() {
   `;
 }
 
+function orderNow() {
+  return `
+    <section id="order" class="section order-section">
+      <h2>Order Now</h2>
+      <p>Write your items and send the order to us on WhatsApp</p>
+
+      <form id="orderForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="phone" placeholder="Your Phone Number" required>
+        <textarea id="message" placeholder="Example: Rice 5kg, Soap 3pcs, Biscuit 2 packets" required></textarea>
+        <button type="submit" class="btn">Send Order on WhatsApp</button>
+      </form>
+    </section>
+  `;
+}
+
 function contact() {
   return `
     <section id="contact" class="section">
@@ -73,16 +89,17 @@ function contact() {
       <p>📍 #10, 1st Main Rd, Vijayanagar 2nd Stage, Bengaluru 560104</p>
       <p>📞 +91 6361450214</p>
       <p>🕘 Open Daily: 9 AM – 10 PM</p>
-
-      <a href="https://wa.me/916361450214" target="_blank" class="btn whatsapp-btn">
-        💬 Chat on WhatsApp
-      </a>
     </section>
   `;
 }
 
 /* RENDER */
-app.innerHTML = home() + productsSection() + gallery() + contact();
+app.innerHTML =
+  home() +
+  productsSection() +
+  gallery() +
+  orderNow() +
+  contact();
 
 /* HERO SLIDER */
 const hero = document.querySelector(".hero");
@@ -93,9 +110,28 @@ setInterval(() => {
   hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
 }, 4000);
 
+/* ORDER FORM → WHATSAPP */
+document.addEventListener("submit", function (e) {
+  if (e.target.id === "orderForm") {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    const text =
+      `Hello Mamta Departmental Store,%0A%0A` +
+      `Name: ${name}%0A` +
+      `Phone: ${phone}%0A%0A` +
+      `Order:%0A${message}`;
+
+    const url = `https://wa.me/916361450214?text=${text}`;
+    window.open(url, "_blank");
+  }
+});
+
 /* SCROLL ANIMATION */
 const cards = document.querySelectorAll(".card");
-
 window.addEventListener("scroll", () => {
   cards.forEach(card => {
     if (card.getBoundingClientRect().top < window.innerHeight - 100) {
