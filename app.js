@@ -2,27 +2,28 @@ const app = document.getElementById("app");
 
 /* HERO IMAGES */
 const heroImages = [
- "images/mamta1.jpg",
-  "images/mamta_god.jpg",
-  "images/mamta_aile.jpg",
-  "images/mamta3.jpg",
-  "images/mamta2.jpg",
-  "images/mamta4.jpg",
+  "images/god.jpg",
+  "images/snacks_buiscuits.jpg",
+  "images/grocery.jpg",
+  "images/soap.jpg"
+
 ];
 
 let heroIndex = 0;
 
 /* DATA */
 const products = [
-  { name: "Rice & Grains", img: "images/mamta_rice.jpg" },
-  { name: "Snacks & Biscuits", img: "images/mamta_buscuits.jpg" },
-  { name: "Soaps & Detergents", img: "images/mamta_detergent.jpg" },
-  { name: "Soaps", img: "images/mamta_detergent_soap.jpg" },
-  { name: "Noodles", img: "images/mamta_noodles.jpg" },
-  { name: "Tea & coffee", img: "images/mamta_tea.jpg" },
-
-
-  { name: "Daily Essentials", img: "images/mamta2.jpg" }
+  { name: "Rice & Grains", img: "images/rice.jpg" },
+  { name: "Snacks & Biscuits", img: "images/snacks_buiscuits.jpg" },
+  { name: "Detergents", img: "images/detergent.jpg" },
+  { name: "grocery", img: "images/grocery.jpg" },
+  { name: "Soaps", img: "images/soap.jpg" },
+  { name: "Soaps", img: "images/soaps.jpg" },
+  { name: "Noodles", img: "images/noodles.jpg" },
+  { name: "Shaving products", img: "images/shavingproducts.jpg" },
+  { name: "Daily Essentials", img: "images/beauty_products.jpg" },
+  { name: "Daily Essentials", img: "images/beauty_products1.jpg" },
+  { name: "Daily Essentials", img: "images/beauty_products3.jpg" }
 ];
 
 /* SECTIONS */
@@ -74,8 +75,8 @@ function contact() {
     <section id="contact" class="section">
       <h2>Visit Us</h2>
       <p>📍 Address: #10, 1st Main Rd, Vijayanagar 2nd stage, RPC Layout, Vijayanagar, Bengaluru, Karnataka 560104</p>
-      <p>📞 +91-06361450214</p>
-      <p>🕘 Open Daily: 9 AM – 10 PM </p>
+      <p>📞 +91 06361450214</p>
+      <p>🕘 Open Daily: 9 AM – 10 PM</p>
     </section>
   `;
 }
