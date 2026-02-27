@@ -70,12 +70,28 @@ function orderNow() {
   return `
     <section id="order" class="section order-section">
       <h2>Order Now</h2>
-      <p>Write your items and send the order to us on WhatsApp</p>
+      <p>Fill the details and send your order on WhatsApp</p>
 
       <form id="orderForm">
         <input type="text" id="name" placeholder="Your Name" required>
         <input type="text" id="phone" placeholder="Your Phone Number" required>
-        <textarea id="message" placeholder="Example: Rice 5kg, Soap 3pcs, Biscuit 2 packets" required></textarea>
+
+        <select id="deliveryType" required>
+          <option value="">Select Delivery Type</option>
+          <option value="Store Pickup">Store Pickup</option>
+          <option value="Door Delivery">Door Delivery</option>
+        </select>
+
+        <textarea
+          id="address"
+          placeholder="Delivery Address (required for Door Delivery)"
+          style="display:none;"></textarea>
+
+        <textarea
+          id="message"
+          placeholder="Example: Rice 5kg, Soap 3pcs, Biscuit 2 packets"
+          required></textarea>
+
         <button type="submit" class="btn">Send Order on WhatsApp</button>
       </form>
     </section>
@@ -110,6 +126,21 @@ setInterval(() => {
   hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
 }, 4000);
 
+/* SHOW / HIDE ADDRESS */
+document.addEventListener("change", function (e) {
+  if (e.target.id === "deliveryType") {
+    const address = document.getElementById("address");
+    if (e.target.value === "Door Delivery") {
+      address.style.display = "block";
+      address.required = true;
+    } else {
+      address.style.display = "none";
+      address.required = false;
+      address.value = "";
+    }
+  }
+});
+
 /* ORDER FORM → WHATSAPP */
 document.addEventListener("submit", function (e) {
   if (e.target.id === "orderForm") {
@@ -117,13 +148,21 @@ document.addEventListener("submit", function (e) {
 
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
+    const deliveryType = document.getElementById("deliveryType").value;
+    const address = document.getElementById("address").value;
     const message = document.getElementById("message").value;
 
-    const text =
+    let text =
       `Hello Mamta Departmental Store,%0A%0A` +
       `Name: ${name}%0A` +
-      `Phone: ${phone}%0A%0A` +
-      `Order:%0A${message}`;
+      `Phone: ${phone}%0A` +
+      `Delivery Type: ${deliveryType}%0A`;
+
+    if (deliveryType === "Door Delivery") {
+      text += `Address: ${address}%0A`;
+    }
+
+    text += `%0AOrder:%0A${message}`;
 
     const url = `https://wa.me/916361450214?text=${text}`;
     window.open(url, "_blank");
