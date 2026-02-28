@@ -70,7 +70,7 @@ function gallery() {
 function orderNow() {
   return `
     <section id="order" class="section order-section">
-      <h2>Order Now</h2>
+      <h2>Order</h2>
       <p>Fill the details and send your order on WhatsApp</p>
 
       <form id="orderForm">
