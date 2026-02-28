@@ -3,6 +3,7 @@ const app = document.getElementById("app");
 /* HERO IMAGES */
 const heroImages = [
   "images/god.jpg",
+  "images/shop.jpg",
   "images/snacks_buiscuits.jpg",
   "images/grocery.jpg",
   "images/soap.jpg"
