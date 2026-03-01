@@ -8,10 +8,11 @@
   <style>
     /* ---------- GLOBAL ---------- */
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f4f4f4;
+      background: #fff7ed; /* VERY LIGHT ORANGE */
       color: #333;
       line-height: 1.6;
     }
@@ -20,7 +21,7 @@
 
     /* ---------- HEADER ---------- */
     header {
-      background: #7b3f00;
+      background: #ff8c00; /* ORANGE */
       color: white;
       position: sticky;
       top: 0;
@@ -45,6 +46,7 @@
       margin-left: 18px;
       font-weight: 500;
       font-size: 14px;
+      color: white;
     }
 
     /* ---------- HERO ---------- */
@@ -79,17 +81,19 @@
     .btn {
       padding: 14px 26px;
       border-radius: 10px;
-      background: #ff9800;
+      background: #ff8c00;
       color: white;
       font-weight: 600;
       display: inline-block;
+      border: none;
+      cursor: pointer;
     }
 
     /* ---------- SECTIONS ---------- */
     .section {
-      background: white;
+      background: #ffffff;
       padding: 70px 0;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .container {
@@ -102,6 +106,7 @@
       text-align: center;
       font-size: clamp(24px, 3vw, 32px);
       margin-bottom: 40px;
+      color: #b45309;
     }
 
     /* ---------- PRODUCTS ---------- */
@@ -139,6 +144,7 @@
     .card-content h3 {
       margin: 0 0 6px;
       font-size: 18px;
+      color: #92400e;
     }
 
     /* ---------- GALLERY ---------- */
@@ -167,22 +173,21 @@
     input, textarea, select {
       padding: 14px;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #f59e0b;
       font-size: 16px;
+    }
+
+    small {
+      color: #92400e;
+      font-size: 13px;
     }
 
     /* ---------- FOOTER ---------- */
     footer {
-      background: #2b1b0f;
+      background: #7c2d12;
       color: white;
       padding: 40px 20px;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
       text-align: center;
-      font-size: 14px;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -217,16 +222,13 @@
 <div id="app"></div>
 
 <footer id="contact">
-  <div class="footer-inner">
-    <p>📍 Vijayanagar, Bengaluru – 560104</p>
-    <p>📞 +91 6361450214</p>
-    <p>🕘 Open Daily: 9 AM – 10 PM</p>
-    <p style="opacity:.6;">© 2026 Mamta Departmental Store</p>
-  </div>
+  <p>📍 Vijayanagar, Bengaluru – 560104</p>
+  <p>📞 +91 6361450214</p>
+  <p>🕘 Open Daily: 9 AM – 10 PM</p>
+  <p style="opacity:.7;">© 2026 Mamta Departmental Store</p>
 </footer>
 
 <script>
-/* ROOT */
 const app = document.getElementById("app");
 
 /* HERO IMAGES */
@@ -293,14 +295,24 @@ app.innerHTML = `
       <form id="orderForm">
         <input id="name" placeholder="Your Name" required>
         <input id="phone" placeholder="Phone Number" required>
+
         <select id="deliveryType" required>
           <option value="">Delivery Type</option>
           <option>Store Pickup</option>
           <option>Door Delivery</option>
         </select>
+
         <textarea id="address" placeholder="Delivery Address" style="display:none;"></textarea>
-        <textarea id="message" placeholder="Order details" required></textarea>
-        <button class="btn">Send Order</button>
+
+        <textarea
+          id="message"
+          required
+          placeholder="Example: Rice 5kg, Soap 3 pcs, Biscuit 2 packets"
+        ></textarea>
+
+        <small>Please mention item name and quantity clearly</small>
+
+        <button class="btn">Send Order on WhatsApp</button>
       </form>
     </div>
   </section>
@@ -315,23 +327,42 @@ setInterval(() => {
   hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
 }, 4000);
 
-/* SHOW ADDRESS */
+/* SHOW / HIDE ADDRESS */
 document.addEventListener("change", e => {
   if (e.target.id === "deliveryType") {
+    const address = document.getElementById("address");
     address.style.display = e.target.value === "Door Delivery" ? "block" : "none";
     address.required = e.target.value === "Door Delivery";
   }
 });
 
-/* WHATSAPP */
+/* WHATSAPP ORDER */
 document.addEventListener("submit", e => {
   if (e.target.id === "orderForm") {
     e.preventDefault();
-    const text =
-      `Hello Mamta Store,%0AName: ${name.value}%0APhone: ${phone.value}%0ADelivery: ${deliveryType.value}%0A` +
-      (deliveryType.value === "Door Delivery" ? `Address: ${address.value}%0A` : "") +
-      `%0AOrder:%0A${message.value}`;
-    window.open(`https://wa.me/916361450214?text=${text}`, "_blank");
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const deliveryType = document.getElementById("deliveryType").value;
+    const address = document.getElementById("address").value;
+    const message = document.getElementById("message").value;
+
+    let text =
+      `Hello Mamta Store,%0A` +
+      `Name: ${name}%0A` +
+      `Phone: ${phone}%0A` +
+      `Delivery: ${deliveryType}%0A`;
+
+    if (deliveryType === "Door Delivery") {
+      text += `Address: ${address}%0A`;
+    }
+
+    text += `%0AOrder:%0A${message}`;
+
+    window.open(
+      `https://wa.me/916361450214?text=${encodeURIComponent(text)}`,
+      "_blank"
+    );
   }
 });
 
