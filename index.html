@@ -1,34 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mamta Departmental Store | Vijayanagar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Mamta Departmental Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
 
-  <link rel="stylesheet" href="style.css">
+    a { text-decoration: none; color: inherit; }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: #7b3f00;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 18px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 80vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content {
+      background: rgba(0,0,0,0.55);
+      padding: 32px 40px;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 720px;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      margin-bottom: 12px;
+    }
+
+    .hero-content p {
+      font-size: clamp(16px, 2vw, 20px);
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 10px;
+      background: #ff9800;
+      color: white;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .section {
+      background: white;
+      padding: 70px 0;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: clamp(24px, 3vw, 32px);
+      margin-bottom: 40px;
+    }
+
+    /* ---------- PRODUCTS ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.4s ease;
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    /* ---------- GALLERY ---------- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    /* ---------- FORM ---------- */
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    input, textarea, select {
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #2b1b0f;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .hero { min-height: 65vh; }
+      .cards { grid-template-columns: 1fr; }
+      .gallery img { height: 200px; }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="logo">Mamta Departmental Store</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#order">Order Now</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header>
+  <div class="header-inner">
+    <div class="logo">Mamta Departmental Store</div>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<main id="app"></main>
+<div id="app"></div>
 
-<footer>
-  <p>© 2026 Mamta Departmental Store | Vijayanagar, Bangalore</p>
+<footer id="contact">
+  <div class="footer-inner">
+    <p>📍 Vijayanagar, Bengaluru – 560104</p>
+    <p>📞 +91 6361450214</p>
+    <p>🕘 Open Daily: 9 AM – 10 PM</p>
+    <p style="opacity:.6;">© 2026 Mamta Departmental Store</p>
+  </div>
 </footer>
 
-<script src="app.js"></script>
+<script>
+/* ROOT */
+const app = document.getElementById("app");
+
+/* HERO IMAGES */
+const heroImages = [
+  "images/god.jpg",
+  "images/shop.jpg",
+  "images/snacks_buiscuits.jpg",
+  "images/grocery.jpg",
+  "images/soap.jpg"
+];
+let heroIndex = 0;
+
+/* PRODUCTS */
+const products = [
+  { name: "Rice & Grains", img: "images/rice.jpg" },
+  { name: "Snacks & Biscuits", img: "images/snacks_buiscuits.jpg" },
+  { name: "Detergents", img: "images/detergent.jpg" },
+  { name: "Grocery", img: "images/grocery.jpg" },
+  { name: "Soaps", img: "images/soap.jpg" },
+  { name: "Noodles", img: "images/noodles.jpg" },
+  { name: "Shaving Products", img: "images/shavingproducts.jpg" },
+  { name: "Daily Essentials", img: "images/beauty_products.jpg" }
+];
+
+app.innerHTML = `
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Everything You Need, Under One Roof</h1>
+      <p>Trusted Store in Vijayanagar, Bangalore</p>
+      <a href="#order" class="btn">Order Now</a>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="cards">
+        ${products.map(p => `
+          <div class="card">
+            <img src="${p.img}">
+            <div class="card-content">
+              <h3>${p.name}</h3>
+              <p>Quality products at best prices</p>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Our Store</h2>
+      <div class="gallery">
+        <img src="images/mamta1.jpg">
+        <img src="images/mamta_card.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section id="order" class="section">
+    <div class="container">
+      <h2>Order on WhatsApp</h2>
+      <form id="orderForm">
+        <input id="name" placeholder="Your Name" required>
+        <input id="phone" placeholder="Phone Number" required>
+        <select id="deliveryType" required>
+          <option value="">Delivery Type</option>
+          <option>Store Pickup</option>
+          <option>Door Delivery</option>
+        </select>
+        <textarea id="address" placeholder="Delivery Address" style="display:none;"></textarea>
+        <textarea id="message" placeholder="Order details" required></textarea>
+        <button class="btn">Send Order</button>
+      </form>
+    </div>
+  </section>
+`;
+
+/* HERO SLIDER */
+const hero = document.querySelector(".hero");
+hero.style.backgroundImage = `url('${heroImages[0]}')`;
+
+setInterval(() => {
+  heroIndex = (heroIndex + 1) % heroImages.length;
+  hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
+}, 4000);
+
+/* SHOW ADDRESS */
+document.addEventListener("change", e => {
+  if (e.target.id === "deliveryType") {
+    address.style.display = e.target.value === "Door Delivery" ? "block" : "none";
+    address.required = e.target.value === "Door Delivery";
+  }
+});
+
+/* WHATSAPP */
+document.addEventListener("submit", e => {
+  if (e.target.id === "orderForm") {
+    e.preventDefault();
+    const text =
+      `Hello Mamta Store,%0AName: ${name.value}%0APhone: ${phone.value}%0ADelivery: ${deliveryType.value}%0A` +
+      (deliveryType.value === "Door Delivery" ? `Address: ${address.value}%0A` : "") +
+      `%0AOrder:%0A${message.value}`;
+    window.open(`https://wa.me/916361450214?text=${text}`, "_blank");
+  }
+});
+
+/* SCROLL ANIMATION */
+const cards = document.querySelectorAll(".card");
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    if (card.getBoundingClientRect().top < window.innerHeight - 100) {
+      card.classList.add("show");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
