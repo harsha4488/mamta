@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #fff7ed; /* VERY LIGHT ORANGE */
+      background: #fff7ed; /* very light orange */
       color: #333;
       line-height: 1.6;
     }
@@ -21,7 +21,7 @@
 
     /* ---------- HEADER ---------- */
     header {
-      background: #ff8c00; /* ORANGE */
+      background: #ff8c00; /* orange */
       color: white;
       position: sticky;
       top: 0;
@@ -84,7 +84,6 @@
       background: #ff8c00;
       color: white;
       font-weight: 600;
-      display: inline-block;
       border: none;
       cursor: pointer;
     }
@@ -336,33 +335,39 @@ document.addEventListener("change", e => {
   }
 });
 
-/* WHATSAPP ORDER */
+/* WHATSAPP ORDER (CORRECT FORMAT) */
 document.addEventListener("submit", e => {
   if (e.target.id === "orderForm") {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
     const deliveryType = document.getElementById("deliveryType").value;
-    const address = document.getElementById("address").value;
-    const message = document.getElementById("message").value;
+    const address = document.getElementById("address").value.trim();
+    const message = document.getElementById("message").value.trim();
 
     let text =
-      `Hello Mamta Store,%0A` +
-      `Name: ${name}%0A` +
-      `Phone: ${phone}%0A` +
-      `Delivery: ${deliveryType}%0A`;
+`Hello Mamta Store,
+
+Name: ${name}
+Phone: ${phone}
+Delivery: ${deliveryType}`;
 
     if (deliveryType === "Door Delivery") {
-      text += `Address: ${address}%0A`;
+      text += `
+Address: ${address}`;
     }
 
-    text += `%0AOrder:%0A${message}`;
+    text += `
 
-    window.open(
-      `https://wa.me/916361450214?text=${encodeURIComponent(text)}`,
-      "_blank"
-    );
+Order:
+${message}`;
+
+    const url =
+      "https://wa.me/916361450214?text=" +
+      encodeURIComponent(text);
+
+    window.open(url, "_blank");
   }
 });
 
