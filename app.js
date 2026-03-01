@@ -46,7 +46,6 @@ function productsSection() {
             <img src="${p.img}">
             <div class="card-content">
               <h3>${p.name}</h3>
-              <p>Quality products at best prices</p>
             </div>
           </div>
         `).join("")}
