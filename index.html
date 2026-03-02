@@ -57,13 +57,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
     }
 
     .hero-content {
-      background: rgba(0,0,0,0.55);
+      background: transparent; /* BLACK OVERLAY REMOVED */
       padding: 32px 40px;
-      border-radius: 16px;
-      text-align: center;
       max-width: 720px;
       color: white;
     }
@@ -71,11 +70,13 @@
     .hero-content h1 {
       font-size: clamp(28px, 4vw, 44px);
       margin-bottom: 12px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.45); /* readability */
     }
 
     .hero-content p {
       font-size: clamp(16px, 2vw, 20px);
       margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.45);
     }
 
     .btn {
@@ -221,7 +222,7 @@
 <div id="app"></div>
 
 <footer id="contact">
-  <p>📍 Vijayanagar, Bengaluru – 560040</p>
+  <p>📍 Vijayanagar, Bengaluru – 560104</p>
   <p>📞 +91 6361450214</p>
   <p>🕘 Open Daily: 9 AM – 10 PM</p>
   <p style="opacity:.7;">© 2026 Mamta Departmental Store</p>
@@ -244,8 +245,6 @@ let heroIndex = 0;
 const products = [
   { name: "Rice & Grains", img: "images/rice.jpg" },
   { name: "Snacks & Biscuits", img: "images/snacks_buiscuits.jpg" },
-  { name: "Snacks", img: "images/snacks.jpg" },
-  { name: "Masala", img: "images/masala.jpg" },
   { name: "Detergents", img: "images/detergent.jpg" },
   { name: "Grocery", img: "images/grocery.jpg" },
   { name: "Soaps", img: "images/soap.jpg" },
@@ -272,6 +271,7 @@ app.innerHTML = `
             <img src="${p.img}">
             <div class="card-content">
               <h3>${p.name}</h3>
+              <p>Quality products at best prices</p>
             </div>
           </div>
         `).join("")}
@@ -283,9 +283,8 @@ app.innerHTML = `
     <div class="container">
       <h2>Our Store</h2>
       <div class="gallery">
-        <img src="images/shop.jpg">
+        <img src="images/mamta1.jpg">
         <img src="images/mamta_card.jpg">
-        <img src="images/god.jpg">
       </div>
     </div>
   </section>
@@ -300,7 +299,7 @@ app.innerHTML = `
         <select id="deliveryType" required>
           <option value="">Delivery Type</option>
           <option>Store Pickup</option>
-          <option>Home Delivery</option>
+          <option>Door Delivery</option>
         </select>
 
         <textarea id="address" placeholder="Delivery Address" style="display:none;"></textarea>
@@ -337,7 +336,7 @@ document.addEventListener("change", e => {
   }
 });
 
-/* WHATSAPP ORDER (CORRECT FORMAT) */
+/* WHATSAPP ORDER */
 document.addEventListener("submit", e => {
   if (e.target.id === "orderForm") {
     e.preventDefault();
@@ -365,11 +364,11 @@ Address: ${address}`;
 Order:
 ${message}`;
 
-    const url =
+    window.open(
       "https://wa.me/916361450214?text=" +
-      encodeURIComponent(text);
-
-    window.open(url, "_blank");
+      encodeURIComponent(text),
+      "_blank"
+    );
   }
 });
 
