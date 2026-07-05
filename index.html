@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mamta Departmental Store</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -17,15 +16,8 @@
 --footer:#7c2d12;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 
 body{
 font-family:'Poppins',sans-serif;
@@ -33,11 +25,10 @@ background:var(--cream);
 color:var(--text);
 }
 
-/* HEADER */
-
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 z-index:1000;
 background:rgba(234,88,12,.95);
@@ -55,73 +46,105 @@ align-items:center;
 }
 
 .logo{
-font-size:32px;
+color:#fff;
+font-size:30px;
 font-weight:800;
-color:white;
 }
 
 .nav-links a{
-text-decoration:none;
 color:white;
+text-decoration:none;
+margin-left:25px;
 font-weight:500;
-margin-left:30px;
 }
 
-/* HERO */
+/* HERO SLIDER */
 
 .hero{
-height:90vh;
-background:url('images/shop.jpg') center center/cover no-repeat;
 position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+height:100vh;
+overflow:hidden;
+}
+
+.hero-slide{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active{
+opacity:1;
+}
+
+.hero-slide:nth-child(1){
+background-image:url('images/shop.jpg');
+}
+
+.hero-slide:nth-child(2){
+background-image:url('images/grocery.jpg');
+}
+
+.hero-slide:nth-child(3){
+background-image:url('images/snacks_buiscuits.jpg');
+}
+
+.hero-slide:nth-child(4){
+background-image:url('images/mamta_card.jpg');
+}
+
+.hero-slide:nth-child(5){
+background-image:url('images/rice.jpg');
 }
 
 .hero::before{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.50);
+background:rgba(0,0,0,.45);
+z-index:2;
 }
 
 .hero-content{
 position:relative;
-z-index:2;
-color:white;
+z-index:3;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 padding:20px;
-max-width:850px;
+color:white;
 }
 
-.hero h1{
-font-size:70px;
+.hero-content h1{
+font-size:72px;
 font-weight:800;
+max-width:900px;
 line-height:1.1;
 margin-bottom:20px;
 }
 
-.hero p{
+.hero-content p{
 font-size:24px;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
 .btn{
 display:inline-block;
 padding:16px 34px;
+border-radius:14px;
 background:linear-gradient(135deg,var(--primary),var(--accent));
 color:white;
-text-decoration:none;
-border-radius:14px;
 font-weight:700;
-transition:.3s;
+text-decoration:none;
 }
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-/* SECTION */
 
 .section{
 padding:90px 20px;
@@ -136,53 +159,26 @@ margin:auto;
 text-align:center;
 font-size:42px;
 color:var(--primary-dark);
-margin-bottom:45px;
+margin-bottom:40px;
 }
 
-.section-title::after{
-content:"";
-display:block;
-width:90px;
-height:5px;
-background:var(--primary);
-margin:12px auto;
-border-radius:10px;
-}
-
-/* STATS */
-
-.stats{
+.cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-.stat-card{
+.card{
 background:white;
-padding:30px;
 border-radius:20px;
-text-align:center;
+padding:25px;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.stat-card h3{
-font-size:40px;
-color:var(--primary);
-}
-
-/* PRODUCTS */
-
-.search-box{
-width:100%;
-padding:15px;
-border-radius:12px;
-border:1px solid #ddd;
-margin-bottom:30px;
+text-align:center;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
@@ -191,11 +187,6 @@ background:white;
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.product-card:hover{
-transform:translateY(-8px);
 }
 
 .product-card img{
@@ -207,39 +198,6 @@ object-fit:cover;
 .product-card h3{
 padding:20px;
 }
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:300px;
-object-fit:cover;
-border-radius:20px;
-}
-
-/* FORM */
-
-form{
-max-width:700px;
-margin:auto;
-}
-
-input,select,textarea{
-width:100%;
-padding:15px;
-margin-bottom:15px;
-border-radius:12px;
-border:1px solid #ddd;
-font-size:16px;
-}
-
-/* FOOTER */
 
 footer{
 background:var(--footer);
@@ -254,37 +212,25 @@ right:20px;
 bottom:20px;
 width:70px;
 height:70px;
-border-radius:50%;
 background:#25D366;
+border-radius:50%;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 font-size:32px;
-text-decoration:none;
 color:white;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+text-decoration:none;
 }
 
 @media(max-width:768px){
-
-.hero h1{
+.hero-content h1{
 font-size:42px;
 }
-
-.hero p{
+.hero-content p{
 font-size:18px;
 }
-
 .nav-links{
 display:none;
-}
-
-.logo{
-font-size:24px;
-}
-
-.section-title{
-font-size:32px;
 }
 }
 </style>
@@ -297,148 +243,80 @@ font-size:32px;
 
 <div class="nav-links">
 <a href="#products">Products</a>
-<a href="#gallery">Gallery</a>
-<a href="#order">Order</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
 </header>
 
 <section class="hero">
+
+<div class="hero-slide active"></div>
+<div class="hero-slide"></div>
+<div class="hero-slide"></div>
+<div class="hero-slide"></div>
+<div class="hero-slide"></div>
+
 <div class="hero-content">
 <h1>Everything You Need Under One Roof</h1>
 <p>Groceries • Snacks • Daily Essentials • Home Delivery</p>
-<a href="#order" class="btn">Order Now</a>
+<a href="#products" class="btn">Explore Products</a>
 </div>
+
 </section>
 
 <section class="section">
 <div class="container">
+
 <h2 class="section-title">Why Choose Us</h2>
 
-<div class="stats">
-<div class="stat-card">
-<h3>1000+</h3>
-<p>Products Available</p>
+<div class="cards">
+<div class="card"><h3>🚚 Fast Delivery</h3><p>Quick doorstep delivery.</p></div>
+<div class="card"><h3>💰 Best Prices</h3><p>Affordable products every day.</p></div>
+<div class="card"><h3>⭐ Trusted Store</h3><p>Serving families in Vijayanagar.</p></div>
 </div>
 
-<div class="stat-card">
-<h3>500+</h3>
-<p>Happy Customers</p>
-</div>
-
-<div class="stat-card">
-<h3>7 Days</h3>
-<p>Service Available</p>
-</div>
-
-<div class="stat-card">
-<h3>Fast</h3>
-<p>Home Delivery</p>
-</div>
-</div>
 </div>
 </section>
 
 <section id="products" class="section">
 <div class="container">
+
 <h2 class="section-title">Our Products</h2>
 
-<input id="search" class="search-box" placeholder="Search products...">
-
-<div id="productGrid" class="products"></div>
+<div class="products">
+<div class="product-card"><img src="images/rice.jpg"><h3>Rice & Grains</h3></div>
+<div class="product-card"><img src="images/snacks.jpg"><h3>Snacks</h3></div>
+<div class="product-card"><img src="images/soap.jpg"><h3>Soaps</h3></div>
+<div class="product-card"><img src="images/grocery.jpg"><h3>Groceries</h3></div>
 </div>
-</section>
 
-<section id="gallery" class="section">
-<div class="container">
-<h2 class="section-title">Store Gallery</h2>
-
-<div class="gallery">
-<img src="images/shop.jpg">
-<img src="images/grocery.jpg">
-<img src="images/mamta_card.jpg">
-</div>
-</div>
-</section>
-
-<section id="order" class="section">
-<div class="container">
-<h2 class="section-title">Order on WhatsApp</h2>
-
-<form id="orderForm">
-<input id="name" placeholder="Your Name" required>
-<input id="phone" placeholder="Phone Number" required>
-
-<select id="delivery">
-<option>Store Pickup</option>
-<option>Door Delivery</option>
-</select>
-
-<textarea id="items" rows="5" placeholder="Rice 5kg, Soap 3 pcs..." required></textarea>
-
-<button type="submit" class="btn">Send Order</button>
-</form>
 </div>
 </section>
 
 <footer id="contact">
 <h3>Mamta Departmental Store</h3>
-<br>
-<p>📍 Vijayanagar, Bengaluru - 560104</p>
+<p>📍 Vijayanagar, Bengaluru</p>
 <p>📞 +91 6361450214</p>
-<p>🕘 Mon-Sat: 9 AM - 10 PM</p>
-<p>🕘 Sunday: 9 AM - 3 PM</p>
+<p>Mon-Sat: 9 AM - 10 PM</p>
+<p>Sunday: 9 AM - 3 PM</p>
 </footer>
 
-<a href="https://wa.me/916361450214" class="whatsapp">💬</a>
+<a class="whatsapp" href="https://wa.me/916361450214">💬</a>
 
 <script>
-const products=[
-["Rice & Grains","images/rice.jpg"],
-["Snacks & Biscuits","images/snacks_buiscuits.jpg"],
-["Chips","images/snacks.jpg"],
-["Masala","images/masala.jpg"],
-["Detergents","images/detergent.jpg"],
-["Grocery","images/grocery.jpg"],
-["Soaps","images/soap.jpg"],
-["Noodles","images/noodles.jpg"],
-["Shaving Products","images/shavingproducts.jpg"]
-];
+const slides=document.querySelectorAll('.hero-slide');
 
-function renderProducts(data){
-document.getElementById('productGrid').innerHTML=data.map(p=>`
-<div class="product-card">
-<img src="${p[1]}">
-<h3>${p[0]}</h3>
-</div>
-`).join('');
-}
+let current=0;
 
-renderProducts(products);
+setInterval(()=>{
 
-document.getElementById('search').addEventListener('input',e=>{
-const val=e.target.value.toLowerCase();
-renderProducts(products.filter(p=>p[0].toLowerCase().includes(val)));
-});
+slides[current].classList.remove('active');
 
-document.getElementById('orderForm').addEventListener('submit',e=>{
-e.preventDefault();
+current=(current+1)%slides.length;
 
-const text=`Hello Mamta Store,
+slides[current].classList.add('active');
 
-Name: ${name.value}
-Phone: ${phone.value}
-Delivery: ${delivery.value}
-
-Order:
-${items.value}`;
-
-window.open(
-'https://wa.me/916361450214?text='+encodeURIComponent(text),
-'_blank'
-);
-});
+},4000);
 </script>
 
 </body>
