@@ -3,107 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mamta Departmental Store - Premium Orange Theme</title>
+<title>Mamta Departmental Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root{
 --primary:#ea580c;
 --primary-dark:#c2410c;
---light-orange:#fed7aa;
---bg:#fffaf5;
+--accent:#f97316;
+--cream:#fffaf5;
 --text:#1f2937;
 --footer:#7c2d12;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--cream);
+color:var(--text);
+}
+
+/* HEADER */
+
 header{
-position:sticky;top:0;z-index:1000;
-background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:rgba(234,88,12,.95);
+backdrop-filter:blur(12px);
 box-shadow:0 4px 20px rgba(0,0,0,.15);
 }
-.nav{max-width:1200px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:24px;font-weight:700;color:white}
-.nav a{color:white;text-decoration:none;margin-left:20px}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:18px 24px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:white;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+margin-left:30px;
+}
+
+/* HERO */
+
 .hero{
 height:90vh;
-background:url('images/shop.jpg') center/cover;
-display:flex;align-items:center;justify-content:center;
-text-align:center;position:relative;
+background:url('images/shop.jpg') center center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
-.hero:before{
-content:"";position:absolute;inset:0;
-background:linear-gradient(rgba(124,45,18,.65),rgba(234,88,12,.35));
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.50);
 }
-.hero-content{position:relative;color:white;max-width:800px;padding:20px}
-.hero h1{font-size:58px;margin-bottom:15px}
-.hero p{font-size:22px;margin-bottom:25px}
+
+.hero-content{
+position:relative;
+z-index:2;
+color:white;
+padding:20px;
+max-width:850px;
+}
+
+.hero h1{
+font-size:70px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:24px;
+margin-bottom:35px;
+}
+
 .btn{
 display:inline-block;
-padding:14px 28px;
-background:linear-gradient(135deg,#ea580c,#f97316);
-color:white;text-decoration:none;border-radius:12px;
-font-weight:600;
+padding:16px 34px;
+background:linear-gradient(135deg,var(--primary),var(--accent));
+color:white;
+text-decoration:none;
+border-radius:14px;
+font-weight:700;
+transition:.3s;
 }
-.section{padding:80px 20px}
-.container{max-width:1200px;margin:auto}
-h2{
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* SECTION */
+
+.section{
+padding:90px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
 text-align:center;
+font-size:42px;
 color:var(--primary-dark);
-margin-bottom:40px;
-font-size:38px;
+margin-bottom:45px;
 }
-h2:after{
+
+.section-title::after{
 content:"";
 display:block;
-width:80px;height:4px;
+width:90px;
+height:5px;
 background:var(--primary);
 margin:12px auto;
 border-radius:10px;
 }
-.cards{
+
+/* STATS */
+
+.stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:24px;
+gap:25px;
 }
-.card{
+
+.stat-card{
 background:white;
-border:1px solid var(--light-orange);
-border-radius:18px;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.stat-card h3{
+font-size:40px;
+color:var(--primary);
+}
+
+/* PRODUCTS */
+
+.search-box{
+width:100%;
+padding:15px;
+border-radius:12px;
+border:1px solid #ddd;
+margin-bottom:30px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.product-card{
+background:white;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 transition:.3s;
 }
-.card:hover{transform:translateY(-8px)}
-.card img{width:100%;height:200px;object-fit:cover}
-.card-body{padding:18px}
-.search{
-width:100%;padding:14px;border-radius:10px;
-border:1px solid #ddd;margin-bottom:25px;
+
+.product-card:hover{
+transform:translateY(-8px);
 }
+
+.product-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.product-card h3{
+padding:20px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:20px;
+}
+
+/* FORM */
+
+form{
+max-width:700px;
+margin:auto;
+}
+
+input,select,textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:16px;
+}
+
+/* FOOTER */
+
 footer{
 background:var(--footer);
-color:white;text-align:center;padding:50px 20px;
+color:white;
+text-align:center;
+padding:50px 20px;
 }
+
 .whatsapp{
-position:fixed;right:20px;bottom:20px;
-width:65px;height:65px;border-radius:50%;
-background:#25D366;color:white;text-decoration:none;
-display:flex;align-items:center;justify-content:center;
-font-size:30px;
+position:fixed;
+right:20px;
+bottom:20px;
+width:70px;
+height:70px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
+
 @media(max-width:768px){
-.hero h1{font-size:38px}
-.nav a{display:none}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.nav-links{
+display:none;
+}
+
+.logo{
+font-size:24px;
+}
+
+.section-title{
+font-size:32px;
+}
 }
 </style>
 </head>
 <body>
 
 <header>
-<div class="nav">
+<div class="navbar">
 <div class="logo">Mamta Departmental Store</div>
-<div>
+
+<div class="nav-links">
 <a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
 <a href="#order">Order</a>
 <a href="#contact">Contact</a>
 </div>
@@ -113,76 +307,137 @@ font-size:30px;
 <section class="hero">
 <div class="hero-content">
 <h1>Everything You Need Under One Roof</h1>
-<p>Groceries, Snacks, Daily Essentials & Fast Delivery</p>
+<p>Groceries • Snacks • Daily Essentials • Home Delivery</p>
 <a href="#order" class="btn">Order Now</a>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-<h2>Why Choose Us</h2>
-<div class="cards">
-<div class="card"><div class="card-body"><h3>🚚 Fast Delivery</h3><p>Quick doorstep delivery.</p></div></div>
-<div class="card"><div class="card-body"><h3>💰 Best Prices</h3><p>Affordable daily essentials.</p></div></div>
-<div class="card"><div class="card-body"><h3>⭐ Trusted Store</h3><p>Serving customers with quality products.</p></div></div>
+<h2 class="section-title">Why Choose Us</h2>
+
+<div class="stats">
+<div class="stat-card">
+<h3>1000+</h3>
+<p>Products Available</p>
+</div>
+
+<div class="stat-card">
+<h3>500+</h3>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat-card">
+<h3>7 Days</h3>
+<p>Service Available</p>
+</div>
+
+<div class="stat-card">
+<h3>Fast</h3>
+<p>Home Delivery</p>
+</div>
 </div>
 </div>
 </section>
 
 <section id="products" class="section">
 <div class="container">
-<h2>Our Products</h2>
-<input class="search" id="search" placeholder="Search products...">
-<div class="cards" id="productsGrid"></div>
+<h2 class="section-title">Our Products</h2>
+
+<input id="search" class="search-box" placeholder="Search products...">
+
+<div id="productGrid" class="products"></div>
+</div>
+</section>
+
+<section id="gallery" class="section">
+<div class="container">
+<h2 class="section-title">Store Gallery</h2>
+
+<div class="gallery">
+<img src="images/shop.jpg">
+<img src="images/grocery.jpg">
+<img src="images/mamta_card.jpg">
+</div>
 </div>
 </section>
 
 <section id="order" class="section">
 <div class="container">
-<h2>Order on WhatsApp</h2>
+<h2 class="section-title">Order on WhatsApp</h2>
+
 <form id="orderForm">
-<input id="name" placeholder="Your Name" required style="width:100%;padding:12px;margin-bottom:10px">
-<input id="phone" placeholder="Phone Number" required style="width:100%;padding:12px;margin-bottom:10px">
-<textarea id="items" placeholder="Rice 5kg, Soap 2 pcs..." required style="width:100%;padding:12px;height:120px;margin-bottom:10px"></textarea>
-<button class="btn">Send Order</button>
+<input id="name" placeholder="Your Name" required>
+<input id="phone" placeholder="Phone Number" required>
+
+<select id="delivery">
+<option>Store Pickup</option>
+<option>Door Delivery</option>
+</select>
+
+<textarea id="items" rows="5" placeholder="Rice 5kg, Soap 3 pcs..." required></textarea>
+
+<button type="submit" class="btn">Send Order</button>
 </form>
 </div>
 </section>
 
 <footer id="contact">
 <h3>Mamta Departmental Store</h3>
-<p>📍 Vijayanagar, Bengaluru</p>
+<br>
+<p>📍 Vijayanagar, Bengaluru - 560104</p>
 <p>📞 +91 6361450214</p>
-<p>Mon-Sat: 9 AM - 10 PM</p>
-<p>Sunday: 9 AM - 3 PM</p>
+<p>🕘 Mon-Sat: 9 AM - 10 PM</p>
+<p>🕘 Sunday: 9 AM - 3 PM</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/916361450214">💬</a>
+<a href="https://wa.me/916361450214" class="whatsapp">💬</a>
 
 <script>
 const products=[
-['Rice & Grains','images/rice.jpg'],
-['Snacks & Biscuits','images/snacks_buiscuits.jpg'],
-['Chips','images/snacks.jpg'],
-['Masala','images/masala.jpg'],
-['Detergents','images/detergent.jpg'],
-['Grocery','images/grocery.jpg'],
-['Soaps','images/soap.jpg'],
-['Noodles','images/noodles.jpg']
+["Rice & Grains","images/rice.jpg"],
+["Snacks & Biscuits","images/snacks_buiscuits.jpg"],
+["Chips","images/snacks.jpg"],
+["Masala","images/masala.jpg"],
+["Detergents","images/detergent.jpg"],
+["Grocery","images/grocery.jpg"],
+["Soaps","images/soap.jpg"],
+["Noodles","images/noodles.jpg"],
+["Shaving Products","images/shavingproducts.jpg"]
 ];
 
-function render(data){
-document.getElementById('productsGrid').innerHTML=data.map(p=>`
-<div class="card">
+function renderProducts(data){
+document.getElementById('productGrid').innerHTML=data.map(p=>`
+<div class="product-card">
 <img src="${p[1]}">
-<div class="card-body"><h3>${p[0]}</h3></div>
-</div>`).join('');
+<h3>${p[0]}</h3>
+</div>
+`).join('');
 }
-render(products);
+
+renderProducts(products);
 
 document.getElementById('search').addEventListener('input',e=>{
-const v=e.target.value.toLowerCase();
-render(products.filter(x=>x[0].toLowerCase().includes(v)));
+const val=e.target.value.toLowerCase();
+renderProducts(products.filter(p=>p[0].toLowerCase().includes(val)));
+});
+
+document.getElementById('orderForm').addEventListener('submit',e=>{
+e.preventDefault();
+
+const text=`Hello Mamta Store,
+
+Name: ${name.value}
+Phone: ${phone.value}
+Delivery: ${delivery.value}
+
+Order:
+${items.value}`;
+
+window.open(
+'https://wa.me/916361450214?text='+encodeURIComponent(text),
+'_blank'
+);
 });
 </script>
 
