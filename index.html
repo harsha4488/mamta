@@ -235,7 +235,7 @@
       border: 1px solid rgba(255,255,255,0.26);
       border-radius: 999px;
       background: rgba(255,255,255,0.10);
-      backdrop-filter: blur(10px);
+      backdrop-filter: none;
       font-size: 13px;
       font-weight: 650;
       margin-bottom: 18px;
@@ -294,7 +294,7 @@
       color: white;
       border-color: rgba(255,255,255,0.26);
       background: rgba(255,255,255,0.10);
-      backdrop-filter: blur(10px);
+      backdrop-filter: none;
     }
 
     .btn-light:hover {
@@ -1040,14 +1040,16 @@
         background:
           linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.48) 0%,
-            rgba(0, 0, 0, 0.24) 100%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.12)
+            rgba(0, 0, 0, 0.16) 0%,
+            rgba(0, 0, 0, 0.05) 100%
           );
+        filter: none;
+      }
+
+      .hero-slide {
+        filter: none;
+        -webkit-filter: none;
+        background-position: center center;
       }
     }
 
