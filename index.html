@@ -21,7 +21,7 @@
       --muted: #78716c;
       --white: #ffffff;
       --border: #fed7aa;
-      --shadow: 0 14px 40px rgba(67, 20, 7, 0.10);
+      --shadow: 0 14px 40px rgba(249, 115, 22, 0.12);
       --radius: 20px;
     }
 
@@ -37,9 +37,20 @@
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(249, 115, 22, 0.09), transparent 28%),
+        radial-gradient(
+          circle at top left,
+          rgba(249, 115, 22, 0.09),
+          transparent 28%
+        ),
         linear-gradient(180deg, #fffaf4 0%, #fff7ed 100%);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
       line-height: 1.6;
     }
 
@@ -69,12 +80,15 @@
       margin-inline: auto;
     }
 
-    /* ---------- HEADER ---------- */
+    /* ==============================
+       HEADER
+    ============================== */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       border-bottom: 1px solid rgba(249, 115, 22, 0.14);
       backdrop-filter: blur(14px);
     }
@@ -102,14 +116,18 @@
       place-items: center;
       border-radius: 14px;
       color: white;
-      background: linear-gradient(135deg, var(--orange), #fb923c);
+      background: linear-gradient(
+        135deg,
+        var(--orange),
+        #fb923c
+      );
       box-shadow: 0 8px 20px rgba(249, 115, 22, 0.28);
       font-size: 21px;
     }
 
     .brand-text strong {
       display: block;
-      color: var(--brown);
+      color: var(--orange-dark);
       font-size: 16px;
       line-height: 1.15;
     }
@@ -173,19 +191,23 @@
 
     .mobile-nav a {
       padding: 12px 14px;
-      background: #fff;
+      background: white;
       border: 1px solid #ffedd5;
       border-radius: 12px;
+      font-weight: 650;
     }
 
-    /* ---------- HERO ---------- */
+    /* ==============================
+       HERO
+    ============================== */
+
     .hero {
       min-height: 710px;
       position: relative;
       overflow: hidden;
       display: grid;
       align-items: center;
-      background: #f97316;
+      background: var(--orange);
       isolation: isolate;
     }
 
@@ -206,7 +228,9 @@
       background-position: center;
       opacity: 0;
       transform: scale(1.04);
-      transition: opacity 1.2s ease, transform 5.5s ease;
+      transition:
+        opacity 1.2s ease,
+        transform 5.5s ease;
     }
 
     .hero-slide.active {
@@ -217,8 +241,17 @@
     .hero-overlay {
       z-index: -2;
       background:
-        linear-gradient(90deg, rgba(37, 18, 7, 0.84) 0%, rgba(37, 18, 7, 0.54) 46%, rgba(37, 18, 7, 0.25) 100%),
-        linear-gradient(180deg, rgba(0,0,0,0.14), rgba(0,0,0,0.26));
+        linear-gradient(
+          90deg,
+          rgba(67, 20, 7, 0.60) 0%,
+          rgba(67, 20, 7, 0.32) 50%,
+          rgba(67, 20, 7, 0.14) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(249, 115, 22, 0.10),
+          rgba(249, 115, 22, 0.16)
+        );
     }
 
     .hero-content {
@@ -232,9 +265,9 @@
       align-items: center;
       gap: 8px;
       padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,0.26);
+      border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 999px;
-      background: rgba(255,255,255,0.10);
+      background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(10px);
       font-size: 13px;
       font-weight: 650;
@@ -246,16 +279,17 @@
       font-size: clamp(40px, 6vw, 68px);
       line-height: 1.02;
       letter-spacing: -0.04em;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
     }
 
     .hero h1 span {
-      color: #fdba74;
+      color: #fed7aa;
     }
 
     .hero p {
       margin: 18px 0 0;
       max-width: 580px;
-      color: rgba(255,255,255,0.86);
+      color: rgba(255, 255, 255, 0.9);
       font-size: clamp(16px, 2vw, 19px);
     }
 
@@ -276,30 +310,39 @@
       border: 1px solid transparent;
       font-weight: 750;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
     .btn-primary {
       color: white;
-      background: linear-gradient(135deg, var(--orange), #fb923c);
-      box-shadow: 0 12px 26px rgba(249, 115, 22, 0.28);
+      background: linear-gradient(
+        135deg,
+        var(--orange),
+        #fb923c
+      );
+      box-shadow:
+        0 12px 26px rgba(249, 115, 22, 0.28);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 30px rgba(249, 115, 22, 0.34);
+      box-shadow:
+        0 16px 30px rgba(249, 115, 22, 0.34);
     }
 
     .btn-light {
       color: white;
-      border-color: rgba(255,255,255,0.26);
-      background: rgba(255,255,255,0.10);
+      border-color: rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(10px);
     }
 
     .btn-light:hover {
       transform: translateY(-2px);
-      background: rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.19);
     }
 
     .hero-note {
@@ -307,7 +350,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.82);
       font-size: 13px;
     }
 
@@ -332,7 +375,7 @@
       border: 0;
       border-radius: 50%;
       cursor: pointer;
-      background: rgba(255,255,255,0.48);
+      background: rgba(255, 255, 255, 0.48);
     }
 
     .hero-dot.active {
@@ -341,7 +384,10 @@
       background: white;
     }
 
-    /* ---------- INFO STRIP ---------- */
+    /* ==============================
+       QUICK INFO
+    ============================== */
+
     .info-strip {
       margin-top: -44px;
       position: relative;
@@ -356,7 +402,7 @@
 
     .info-card {
       padding: 19px;
-      background: rgba(255,255,255,0.97);
+      background: rgba(255, 255, 255, 0.98);
       border: 1px solid #ffedd5;
       border-radius: 17px;
       box-shadow: var(--shadow);
@@ -374,7 +420,7 @@
 
     .info-card strong {
       display: block;
-      color: var(--brown);
+      color: var(--orange-dark);
       font-size: 14px;
     }
 
@@ -385,15 +431,18 @@
       font-size: 12px;
     }
 
-    /* ---------- SECTION ---------- */
+    /* ==============================
+       SECTIONS
+    ============================== */
+
     .section {
       padding: 92px 0;
     }
 
     .section.alt {
-      background: rgba(255,255,255,0.72);
-      border-top: 1px solid rgba(249,115,22,0.08);
-      border-bottom: 1px solid rgba(249,115,22,0.08);
+      background: rgba(255, 255, 255, 0.78);
+      border-top: 1px solid rgba(249, 115, 22, 0.08);
+      border-bottom: 1px solid rgba(249, 115, 22, 0.08);
     }
 
     .section-head {
@@ -416,7 +465,7 @@
 
     .section h2 {
       margin: 0;
-      color: var(--brown);
+      color: var(--orange-dark);
       font-size: clamp(30px, 4vw, 42px);
       line-height: 1.12;
       letter-spacing: -0.03em;
@@ -428,7 +477,10 @@
       color: var(--muted);
     }
 
-    /* ---------- PRODUCTS ---------- */
+    /* ==============================
+       PRODUCTS
+    ============================== */
+
     .cards {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -440,20 +492,24 @@
       background: white;
       border: 1px solid #ffedd5;
       border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(67,20,7,0.07);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow:
+        0 8px 24px rgba(249, 115, 22, 0.07);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 34px rgba(67,20,7,0.13);
+      box-shadow:
+        0 15px 34px rgba(249, 115, 22, 0.14);
     }
 
     .card-media {
       position: relative;
       aspect-ratio: 1.18 / 1;
       overflow: hidden;
-      background: #fff7ed;
+      background: var(--orange-soft);
     }
 
     .card-media img {
@@ -473,7 +529,7 @@
 
     .card-body h3 {
       margin: 0;
-      color: #f97316;
+      color: var(--orange-dark);
       font-size: 16px;
     }
 
@@ -483,7 +539,10 @@
       font-size: 12px;
     }
 
-    /* ---------- GALLERY ---------- */
+    /* ==============================
+       GALLERY
+    ============================== */
+
     .gallery-grid {
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr;
@@ -518,7 +577,7 @@
       bottom: 14px;
       padding: 7px 10px;
       border-radius: 999px;
-      background: rgba(0,0,0,0.58);
+      background: rgba(249, 115, 22, 0.82);
       color: white;
       font-size: 11px;
       opacity: 0;
@@ -536,7 +595,10 @@
       transform: translateY(0);
     }
 
-    /* ---------- ORDER ---------- */
+    /* ==============================
+       ORDER
+    ============================== */
+
     .order-wrap {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
@@ -556,7 +618,7 @@
     .order-card h3,
     .contact-card h3 {
       margin: 0;
-      color: var(--brown);
+      color: var(--orange-dark);
       font-size: 23px;
     }
 
@@ -578,7 +640,7 @@
       gap: 12px;
       align-items: flex-start;
       padding: 13px;
-      background: #fffaf5;
+      background: var(--orange-soft);
       border: 1px solid #ffedd5;
       border-radius: 15px;
     }
@@ -598,7 +660,7 @@
 
     .step strong {
       display: block;
-      color: #f97316;
+      color: var(--orange-dark);
       font-size: 13px;
     }
 
@@ -636,7 +698,9 @@
       outline: 0;
       color: var(--text);
       background: #fffdfb;
-      transition: border 0.2s ease, box-shadow 0.2s ease;
+      transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     textarea {
@@ -648,7 +712,8 @@
     textarea:focus,
     select:focus {
       border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(249,115,22,0.10);
+      box-shadow:
+        0 0 0 4px rgba(249, 115, 22, 0.10);
     }
 
     .form-help {
@@ -657,7 +722,10 @@
       font-size: 11px;
     }
 
-    /* ---------- CONTACT ---------- */
+    /* ==============================
+       CONTACT
+    ============================== */
+
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -668,7 +736,7 @@
     .contact-item {
       padding: 15px;
       border-radius: 15px;
-      background: #fffaf5;
+      background: var(--orange-soft);
       border: 1px solid #ffedd5;
     }
 
@@ -680,7 +748,7 @@
     }
 
     .contact-item strong {
-      color: #f97316;
+      color: var(--orange-dark);
       font-size: 13px;
     }
 
@@ -691,11 +759,18 @@
       text-underline-offset: 3px;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* ==============================
+       FOOTER
+    ============================== */
+
     footer {
       padding: 52px 0 30px;
-      color: rgba(255,255,255,0.85);
-      background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+      color: white;
+      background: linear-gradient(
+        135deg,
+        #f97316 0%,
+        #fb923c 100%
+      );
     }
 
     .footer-grid {
@@ -713,7 +788,7 @@
 
     footer p,
     footer a {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.86);
       font-size: 13px;
     }
 
@@ -730,16 +805,19 @@
 
     .footer-bottom {
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
       display: flex;
       justify-content: space-between;
       gap: 15px;
       flex-wrap: wrap;
       font-size: 12px;
-      color: rgba(255,255,255,0.58);
+      color: rgba(255, 255, 255, 0.76);
     }
 
-    /* ---------- FLOATING ACTIONS ---------- */
+    /* ==============================
+       FLOATING ACTIONS
+    ============================== */
+
     .floating-actions {
       position: fixed;
       right: 18px;
@@ -757,7 +835,8 @@
       place-items: center;
       color: white;
       font-size: 21px;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+      box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.18);
       transition: transform 0.2s ease;
     }
 
@@ -773,7 +852,10 @@
       background: var(--orange);
     }
 
-    /* ---------- LIGHTBOX ---------- */
+    /* ==============================
+       LIGHTBOX
+    ============================== */
+
     .lightbox {
       position: fixed;
       inset: 0;
@@ -793,7 +875,8 @@
       max-height: 86vh;
       border-radius: 16px;
       object-fit: contain;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     .lightbox-close {
@@ -805,12 +888,15 @@
       border: 0;
       border-radius: 50%;
       color: white;
-      background: rgba(255,255,255,0.14);
+      background: rgba(255, 255, 255, 0.14);
       cursor: pointer;
       font-size: 22px;
     }
 
-    /* ---------- BACK TO TOP ---------- */
+    /* ==============================
+       BACK TO TOP
+    ============================== */
+
     .back-top {
       position: fixed;
       right: 18px;
@@ -820,9 +906,10 @@
       height: 42px;
       border: 0;
       border-radius: 50%;
-      color: #f97316;
+      color: var(--orange-dark);
       background: white;
-      box-shadow: 0 10px 22px rgba(67,20,7,0.16);
+      box-shadow:
+        0 10px 22px rgba(249, 115, 22, 0.16);
       cursor: pointer;
       opacity: 0;
       visibility: hidden;
@@ -836,7 +923,10 @@
       transform: translateY(0);
     }
 
-    /* ---------- REVEAL ---------- */
+    /* ==============================
+       REVEAL ANIMATION
+    ============================== */
+
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -848,7 +938,10 @@
       transform: translateY(0);
     }
 
-    /* ---------- RESPONSIVE ---------- */
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+
     @media (max-width: 1100px) {
       .cards {
         grid-template-columns: repeat(4, 1fr);
@@ -898,8 +991,16 @@
 
       .hero-overlay {
         background:
-          linear-gradient(90deg, rgba(37, 18, 7, 0.84) 0%, rgba(37, 18, 7, 0.65) 100%),
-          linear-gradient(180deg, rgba(0,0,0,0.14), rgba(0,0,0,0.28));
+          linear-gradient(
+            90deg,
+            rgba(67, 20, 7, 0.60) 0%,
+            rgba(67, 20, 7, 0.35) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(249, 115, 22, 0.08),
+            rgba(249, 115, 22, 0.14)
+          );
       }
 
       .hero-content {
@@ -1045,631 +1146,1493 @@
 
 <body>
 
-<header>
-  <div class="container header-inner">
-    <a class="brand" href="#">
-      <div class="brand-mark">🛒</div>
-      <div class="brand-text">
-        <strong>Mamta Departmental Store</strong>
-        <span>Vijayanagar, Bengaluru</span>
-      </div>
-    </a>
+  <!-- ==============================
+       HEADER
+  ============================== -->
 
-    <nav aria-label="Primary navigation">
+  <header>
+    <div class="container header-inner">
+
+      <a class="brand" href="#">
+        <div class="brand-mark">🛒</div>
+
+        <div class="brand-text">
+          <strong>Mamta Departmental Store</strong>
+          <span>Super Store · Vijayanagar</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#order">Order</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </div>
+
+    <div class="container mobile-nav" id="mobileNav">
       <a href="#products">Products</a>
       <a href="#gallery">Gallery</a>
-      <a href="#order">Order</a>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </nav>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
-      ☰
-    </button>
-  </div>
-
-  <div class="container mobile-nav" id="mobileNav">
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#order">Order on WhatsApp</a>
-    <a href="#contact">Contact & Location</a>
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero" aria-label="Mamta Departmental Store">
-    <div class="hero-slides" id="heroSlides"></div>
-    <div class="hero-overlay"></div>
-
-    <div class="container">
-      <div class="hero-content reveal visible">
-        <div class="hero-badge">⭐ Super Store · Vijayanagar</div>
-
-        <h1>
-          Everything you need,
-          <span>under one roof.</span>
-        </h1>
-
-        <p>
-          Groceries, snacks, household essentials and everyday products —
-          conveniently available in your neighbourhood.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#order" class="btn btn-primary">🛍️ Order on WhatsApp</a>
-          <a
-            class="btn btn-light"
-            href="https://www.google.com/maps/search/?api=1&query=%2310%2C%201st%20Main%20Rd%2C%20Vijaya%20Nagar%20II%20Stage%2C%20RPC%20Layout%2C%20Vijayanagar%2C%20Bengaluru%2C%20Karnataka%20560104"
-            target="_blank"
-            rel="noopener noreferrer"
-          >📍 Get Directions</a>
-        </div>
-
-        <div class="hero-note">
-          <span>🚚 Door delivery available</span>
-          <span>🕘 Open Mon–Sat till 10 PM</span>
-        </div>
-      </div>
+      <a href="#order">Order on WhatsApp</a>
+      <a href="#contact">Contact & Location</a>
     </div>
+  </header>
 
-    <div class="hero-dots" id="heroDots" aria-label="Hero image controls"></div>
-  </section>
+  <main>
 
-  <!-- QUICK INFO -->
-  <section class="info-strip" aria-label="Store highlights">
-    <div class="container info-grid">
-      <div class="info-card reveal">
-        <div class="info-icon">🛒</div>
-        <strong>Daily Essentials</strong>
-        <span>Groceries & home needs</span>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">🥫</div>
-        <strong>Snacks & Pantry</strong>
-        <span>Biscuits, chips, noodles & more</span>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">🚚</div>
-        <strong>Door Delivery</strong>
-        <span>Easy WhatsApp ordering</span>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">📍</div>
-        <strong>Vijayanagar</strong>
-        <span>Bengaluru · 560104</span>
-      </div>
-    </div>
-  </section>
+    <!-- ==============================
+         HERO
+    ============================== -->
 
-  <!-- PRODUCTS -->
-  <section class="section" id="products">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">What we stock</span>
-          <h2>Our products</h2>
-          <p>Everyday essentials for your home, all in one convenient place.</p>
-        </div>
-      </div>
+    <section
+      class="hero"
+      aria-label="Mamta Departmental Store"
+    >
 
-      <div class="cards" id="productCards"></div>
-    </div>
-  </section>
+      <div
+        class="hero-slides"
+        id="heroSlides"
+      ></div>
 
-  <!-- GALLERY -->
-  <section class="section alt" id="gallery">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Inside the store</span>
-          <h2>Our store</h2>
-          <p>Take a quick look around Mamta Departmental Store.</p>
-        </div>
-      </div>
+      <div class="hero-overlay"></div>
 
-      <div class="gallery-grid" id="galleryGrid"></div>
-    </div>
-  </section>
+      <div class="container">
 
-  <!-- ORDER -->
-  <section class="section" id="order">
-    <div class="container">
-      <div class="order-wrap">
+        <div class="hero-content reveal visible">
 
-        <div class="order-card reveal">
-          <span class="eyebrow">Quick & convenient</span>
-          <h3>Order on WhatsApp</h3>
-          <p>
-            Send your shopping list to us and choose store pickup or door delivery.
-          </p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div>
-                <strong>Enter your details</strong>
-                <span>Name and phone number</span>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-num">2</div>
-              <div>
-                <strong>Choose delivery</strong>
-                <span>Pickup or doorstep delivery</span>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-num">3</div>
-              <div>
-                <strong>Send your list</strong>
-                <span>Item names and quantities</span>
-              </div>
-            </div>
+          <div class="hero-badge">
+            ⭐ Super Store · Vijayanagar
           </div>
-        </div>
 
-        <div class="order-card reveal">
-          <h3>Place your order</h3>
-          <p>We’ll open WhatsApp with your order details ready to send.</p>
+          <h1>
+            Everything you need,
+            <span>under one roof.</span>
+          </h1>
 
-          <form id="orderForm">
-            <div class="form-row">
-              <label>
-                Your Name
-                <input id="name" type="text" placeholder="Enter your name" autocomplete="name" required />
-              </label>
-
-              <label>
-                Phone Number
-                <input id="phone" type="tel" placeholder="10-digit number" autocomplete="tel" required />
-              </label>
-            </div>
-
-            <label>
-              Delivery Type
-              <select id="deliveryType" required>
-                <option value="">Select an option</option>
-                <option value="Store Pickup">Store Pickup</option>
-                <option value="Door Delivery">Door Delivery</option>
-              </select>
-            </label>
-
-            <label id="addressWrap" hidden>
-              Delivery Address
-              <textarea id="address" placeholder="Enter your full delivery address"></textarea>
-            </label>
-
-            <label>
-              Shopping List
-              <textarea
-                id="message"
-                required
-                placeholder="Example: Rice 5kg, Soap 3 pcs, Biscuit 2 packets"
-              ></textarea>
-            </label>
-
-            <p class="form-help">
-              Please mention item name and quantity clearly.
-            </p>
-
-            <button class="btn btn-primary" type="submit">
-              💬 Send Order on WhatsApp
-            </button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section alt" id="contact">
-    <div class="container">
-      <div class="order-wrap">
-        <div class="contact-card reveal">
-          <span class="eyebrow">Find our Super Store</span>
-          <h3>Visit Mamta Departmental Store</h3>
           <p>
-            Conveniently located in Vijayanagar II Stage, RPC Layout, Bengaluru.
+            Groceries, snacks, household essentials and everyday products —
+            conveniently available at Mamta Super Store.
           </p>
 
-          <p>
+          <div class="hero-actions">
+
             <a
-              class="address-link"
-              href="https://www.google.com/maps/search/?api=1&query=%2310%2C%201st%20Main%20Rd%2C%20Vijaya%20Nagar%20II%20Stage%2C%20RPC%20Layout%2C%20Vijayanagar%2C%20Bengaluru%2C%20Karnataka%20560104"
+              href="#order"
+              class="btn btn-primary"
+            >
+              🛍️ Order on WhatsApp
+            </a>
+
+            <a
+              class="btn btn-light"
+              href="https://www.google.com/maps/dir//MAMTA+DEPARTMENTAL+STORES,+%2310,+1st+Main+Rd,+Vijaya+Nagar+II+Stage,+RPC+Layout,+Vijayanagar,+Bengaluru,+Karnataka+560104/@12.9613905,77.5388665,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3bae3fbd74a9dc51:0x6fa4cb0c007a0243!2m2!1d77.542597!2d12.9670842!3e0?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
             >
-              #10, 1st Main Rd, Vijaya Nagar II Stage, RPC Layout,
-              Vijayanagar, Bengaluru, Karnataka 560104
+              📍 Get Directions
+            </a>
+
+          </div>
+
+          <div class="hero-note">
+            <span>🚚 Door delivery available</span>
+            <span>🕘 Open Mon–Sat till 10 PM</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div
+        class="hero-dots"
+        id="heroDots"
+        aria-label="Hero image controls"
+      ></div>
+
+    </section>
+
+    <!-- ==============================
+         QUICK INFO
+    ============================== -->
+
+    <section
+      class="info-strip"
+      aria-label="Store highlights"
+    >
+
+      <div class="container info-grid">
+
+        <div class="info-card reveal">
+          <div class="info-icon">🛒</div>
+          <strong>Daily Essentials</strong>
+          <span>Groceries & home needs</span>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-icon">🥫</div>
+          <strong>Snacks & Pantry</strong>
+          <span>Biscuits, chips, noodles & more</span>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-icon">🚚</div>
+          <strong>Door Delivery</strong>
+          <span>Easy WhatsApp ordering</span>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-icon">📍</div>
+          <strong>Vijayanagar</strong>
+          <span>Bengaluru · 560104</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================
+         PRODUCTS
+    ============================== -->
+
+    <section
+      class="section"
+      id="products"
+    >
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <span class="eyebrow">
+              What we stock
+            </span>
+
+            <h2>
+              Our Products
+            </h2>
+
+            <p>
+              Everyday essentials for your home,
+              all in one convenient place.
+            </p>
+          </div>
+
+        </div>
+
+        <div
+          class="cards"
+          id="productCards"
+        ></div>
+
+      </div>
+    </section>
+
+    <!-- ==============================
+         GALLERY
+    ============================== -->
+
+    <section
+      class="section alt"
+      id="gallery"
+    >
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <span class="eyebrow">
+              Inside the store
+            </span>
+
+            <h2>
+              Our Store
+            </h2>
+
+            <p>
+              Take a quick look around Mamta Departmental Store.
+            </p>
+          </div>
+
+        </div>
+
+        <div
+          class="gallery-grid"
+          id="galleryGrid"
+        ></div>
+
+      </div>
+    </section>
+
+    <!-- ==============================
+         ORDER
+    ============================== -->
+
+    <section
+      class="section"
+      id="order"
+    >
+
+      <div class="container">
+
+        <div class="order-wrap">
+
+          <div class="order-card reveal">
+
+            <span class="eyebrow">
+              Quick & convenient
+            </span>
+
+            <h3>
+              Order on WhatsApp
+            </h3>
+
+            <p>
+              Send your shopping list to us and choose
+              store pickup or door delivery.
+            </p>
+
+            <div class="steps">
+
+              <div class="step">
+                <div class="step-num">1</div>
+
+                <div>
+                  <strong>
+                    Enter your details
+                  </strong>
+
+                  <span>
+                    Name and phone number
+                  </span>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-num">2</div>
+
+                <div>
+                  <strong>
+                    Choose delivery
+                  </strong>
+
+                  <span>
+                    Pickup or doorstep delivery
+                  </span>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-num">3</div>
+
+                <div>
+                  <strong>
+                    Send your list
+                  </strong>
+
+                  <span>
+                    Item names and quantities
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="order-card reveal">
+
+            <h3>
+              Place Your Order
+            </h3>
+
+            <p>
+              We’ll open WhatsApp with your order details ready to send.
+            </p>
+
+            <form id="orderForm">
+
+              <div class="form-row">
+
+                <label>
+                  Your Name
+
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Phone Number
+
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="10-digit number"
+                    autocomplete="tel"
+                    required
+                  />
+                </label>
+
+              </div>
+
+              <label>
+                Delivery Type
+
+                <select
+                  id="deliveryType"
+                  required
+                >
+                  <option value="">
+                    Select an option
+                  </option>
+
+                  <option value="Store Pickup">
+                    Store Pickup
+                  </option>
+
+                  <option value="Door Delivery">
+                    Door Delivery
+                  </option>
+                </select>
+              </label>
+
+              <label
+                id="addressWrap"
+                hidden
+              >
+                Delivery Address
+
+                <textarea
+                  id="address"
+                  placeholder="Enter your full delivery address"
+                ></textarea>
+              </label>
+
+              <label>
+                Shopping List
+
+                <textarea
+                  id="message"
+                  required
+                  placeholder="Example: Rice 5kg, Soap 3 pcs, Biscuit 2 packets"
+                ></textarea>
+              </label>
+
+              <p class="form-help">
+                Please mention item name and quantity clearly.
+              </p>
+
+              <button
+                class="btn btn-primary"
+                type="submit"
+              >
+                💬 Send Order on WhatsApp
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
+    <section
+      class="section alt"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="order-wrap">
+
+          <div class="contact-card reveal">
+
+            <span class="eyebrow">
+              Find our Super Store
+            </span>
+
+            <h3>
+              Visit Mamta Departmental Store
+            </h3>
+
+            <p>
+              Conveniently located in Vijayanagar II Stage,
+              RPC Layout, Bengaluru.
+            </p>
+
+            <p>
+              <a
+                class="address-link"
+                href="https://www.google.com/maps/dir//MAMTA+DEPARTMENTAL+STORES,+%2310,+1st+Main+Rd,+Vijaya+Nagar+II+Stage,+RPC+Layout,+Vijayanagar,+Bengaluru,+Karnataka+560104/@12.9613905,77.5388665,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3bae3fbd74a9dc51:0x6fa4cb0c007a0243!2m2!1d77.542597!2d12.9670842!3e0?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                #10, 1st Main Rd, Vijaya Nagar II Stage,
+                RPC Layout, Vijayanagar, Bengaluru,
+                Karnataka 560104
+              </a>
+            </p>
+
+            <div class="contact-grid">
+
+              <div class="contact-item">
+                <small>Call us</small>
+
+                <strong>
+                  <a href="tel:+916361450214">
+                    +91 6361450214
+                  </a>
+                </strong>
+              </div>
+
+              <div class="contact-item">
+                <small>WhatsApp</small>
+
+                <strong>
+                  <a
+                    href="https://wa.me/916361450214"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Chat with us
+                  </a>
+                </strong>
+              </div>
+
+            </div>
+
+            <div
+              class="hero-actions"
+              style="margin-top:20px;"
+            >
+
+              <a
+                class="btn btn-primary"
+                href="https://www.google.com/maps/dir//MAMTA+DEPARTMENTAL+STORES,+%2310,+1st+Main+Rd,+Vijaya+Nagar+II+Stage,+RPC+Layout,+Vijayanagar,+Bengaluru,+Karnataka+560104/@12.9613905,77.5388665,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3bae3fbd74a9dc51:0x6fa4cb0c007a0243!2m2!1d77.542597!2d12.9670842!3e0?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 Open in Google Maps
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="contact-card reveal">
+
+            <span class="eyebrow">
+              Store Hours
+            </span>
+
+            <h3>
+              Store & Delivery Timings
+            </h3>
+
+            <p>
+              Plan your visit or delivery around our daily timings.
+            </p>
+
+            <div class="contact-grid">
+
+              <div class="contact-item">
+                <small>
+                  Store — Mon to Sat
+                </small>
+
+                <strong>
+                  9:00 AM – 10:00 PM
+                </strong>
+              </div>
+
+              <div class="contact-item">
+                <small>
+                  Store — Sunday
+                </small>
+
+                <strong>
+                  9:00 AM – 2:00 PM
+                </strong>
+              </div>
+
+              <div class="contact-item">
+                <small>
+                  Delivery — Mon to Sat
+                </small>
+
+                <strong>
+                  9:00 AM – 10:00 PM
+                </strong>
+              </div>
+
+              <div class="contact-item">
+                <small>
+                  Delivery — Sunday
+                </small>
+
+                <strong>
+                  9:00 AM – 3:00 PM
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>
+            Mamta Departmental Store
+          </h3>
+
+          <p>
+            Your Super Store for groceries, snacks,
+            household essentials and everyday needs
+            in Vijayanagar.
+          </p>
+
+          <p>
+            <a
+              href="https://www.google.com/maps/dir//MAMTA+DEPARTMENTAL+STORES,+%2310,+1st+Main+Rd,+Vijaya+Nagar+II+Stage,+RPC+Layout,+Vijayanagar,+Bengaluru,+Karnataka+560104/@12.9613905,77.5388665,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3bae3fbd74a9dc51:0x6fa4cb0c007a0243!2m2!1d77.542597!2d12.9670842!3e0?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📍 #10, 1st Main Rd, Vijayanagar,
+              Bengaluru – 560104
+            </a>
+          </p>
+        </div>
+
+        <div>
+
+          <h4>
+            Quick Links
+          </h4>
+
+          <p>
+            <a href="#products">
+              Products
             </a>
           </p>
 
-          <div class="contact-grid">
-            <div class="contact-item">
-              <small>Call us</small>
-              <strong><a href="tel:+916361450214">+91 6361450214</a></strong>
-            </div>
+          <p>
+            <a href="#gallery">
+              Gallery
+            </a>
+          </p>
 
-            <div class="contact-item">
-              <small>WhatsApp</small>
-              <strong>
-                <a
-                  href="https://wa.me/916361450214"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Chat with us</a>
-              </strong>
-            </div>
-          </div>
+          <p>
+            <a href="#order">
+              Order on WhatsApp
+            </a>
+          </p>
 
-          <div class="hero-actions" style="margin-top:20px;">
-            <a
-              class="btn btn-primary"
-              href="https://www.google.com/maps/search/?api=1&query=%2310%2C%201st%20Main%20Rd%2C%20Vijaya%20Nagar%20II%20Stage%2C%20RPC%20Layout%2C%20Vijayanagar%2C%20Bengaluru%2C%20Karnataka%20560104"
-              target="_blank"
-              rel="noopener noreferrer"
-            >📍 Open in Google Maps</a>
-          </div>
+          <p>
+            <a href="#contact">
+              Contact & Location
+            </a>
+          </p>
+
         </div>
 
-        <div class="contact-card reveal">
-          <span class="eyebrow">Hours</span>
-          <h3>Store & delivery timings</h3>
-          <p>Plan your visit or delivery around our daily timings.</p>
+        <div>
 
-          <div class="contact-grid">
-            <div class="contact-item">
-              <small>Store — Mon to Sat</small>
-              <strong>9:00 AM – 10:00 PM</strong>
-            </div>
+          <h4>
+            Store Timings
+          </h4>
 
-            <div class="contact-item">
-              <small>Store — Sunday</small>
-              <strong>9:00 AM – 2:00 PM</strong>
-            </div>
+          <div class="footer-hours">
 
-            <div class="contact-item">
-              <small>Delivery — Mon to Sat</small>
-              <strong>9:00 AM – 10:00 PM</strong>
-            </div>
+            <span>
+              Mon – Sat: 9:00 AM – 10:00 PM
+            </span>
 
-            <div class="contact-item">
-              <small>Delivery — Sunday</small>
-              <strong>9:00 AM – 3:00 PM</strong>
-            </div>
+            <span>
+              Sunday: 9:00 AM – 2:00 PM
+            </span>
+
+            <span>
+              Delivery Sunday: till 3:00 PM
+            </span>
+
+            <span>
+              📞 +91 6361450214
+            </span>
+
           </div>
+
         </div>
-      </div>
-    </div>
-  </section>
 
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-
-      <div>
-        <h3>Mamta Departmental Store</h3>
-        <p>
-          Your super store for groceries, snacks, household essentials
-          and everyday needs in Vijayanagar.
-        </p>
       </div>
 
-      <div>
-        <h4>Quick links</h4>
-        <p><a href="#products">Products</a></p>
-        <p><a href="#gallery">Gallery</a></p>
-        <p><a href="#order">Order on WhatsApp</a></p>
-        <p><a href="#contact">Contact & Location</a></p>
-      </div>
+      <div class="footer-bottom">
 
-      <div>
-        <h4>Store timings</h4>
-        <div class="footer-hours">
-          <span>Mon – Sat: 9:00 AM – 10:00 PM</span>
-          <span>Sunday: 9:00 AM – 2:00 PM</span>
-          <span>Delivery Sunday: till 3:00 PM</span>
-        </div>
+        <span>
+          © 2026 Mamta Departmental Store
+        </span>
+
+        <span>
+          Vijayanagar, Bengaluru – 560104
+        </span>
+
       </div>
 
     </div>
 
-    <div class="footer-bottom">
-      <span>© 2026 Mamta Departmental Store</span>
-      <span>Vijayanagar, Bengaluru – 560104</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- FLOATING ACTIONS -->
-<div class="floating-actions" aria-label="Quick actions">
-  <a
-    class="float-btn float-wa"
-    href="https://wa.me/916361450214"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp Mamta Departmental Store"
-  >💬</a>
+  <!-- ==============================
+       FLOATING ACTIONS
+  ============================== -->
 
-  <a
-    class="float-btn float-call"
-    href="tel:+916361450214"
-    aria-label="Call Mamta Departmental Store"
-  >📞</a>
-</div>
+  <div
+    class="floating-actions"
+    aria-label="Quick actions"
+  >
 
-<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">×</button>
-  <img id="lightboxImage" src="" alt="Store photo" />
-</div>
-
-<script>
-  const heroImages = [
-    "images/god.jpg",
-    "images/shop.jpg",
-    "images/snacks_buiscuits.jpg",
-    "images/grocery.jpg",
-    "images/soap.jpg"
-  ];
-
-  const products = [
-    { name: "Rice & Grains", img: "images/rice.jpg", desc: "Everyday staples" },
-    { name: "Snacks & Biscuits", img: "images/snacks_buiscuits.jpg", desc: "Tea-time favourites" },
-    { name: "Chips", img: "images/snacks.jpg", desc: "Crunchy snacks" },
-    { name: "Masala", img: "images/masala.jpg", desc: "Spices & seasoning" },
-    { name: "Detergents", img: "images/detergent.jpg", desc: "Laundry essentials" },
-    { name: "Grocery", img: "images/grocery.jpg", desc: "Pantry essentials" },
-    { name: "Soaps", img: "images/soap.jpg", desc: "Bath & personal care" },
-    { name: "Noodles", img: "images/noodles.jpg", desc: "Quick meal options" },
-    { name: "Shaving Products", img: "images/shavingproducts.jpg", desc: "Grooming essentials" },
-    { name: "Daily Essentials", img: "images/beauty_products.jpg", desc: "Everyday personal care" }
-  ];
-
-  const galleryImages = [
-    { src: "images/shop.jpg", alt: "Mamta Departmental Store front" },
-    { src: "images/mamta_card.jpg", alt: "Mamta Departmental Store" },
-    { src: "images/god.jpg", alt: "Store products" },
-    { src: "images/grocery.jpg", alt: "Grocery section" },
-    { src: "images/snacks_buiscuits.jpg", alt: "Snacks and biscuits" },
-    { src: "images/soap.jpg", alt: "Household and personal care products" }
-  ];
-
-  const heroSlides = document.getElementById("heroSlides");
-  const heroDots = document.getElementById("heroDots");
-  const productCards = document.getElementById("productCards");
-  const galleryGrid = document.getElementById("galleryGrid");
-
-  /* ---------- HERO ---------- */
-  heroImages.forEach((src, index) => {
-    const slide = document.createElement("div");
-    slide.className = "hero-slide" + (index === 0 ? " active" : "");
-    slide.style.backgroundImage = `url("${src}")`;
-    heroSlides.appendChild(slide);
-
-    const dot = document.createElement("button");
-    dot.className = "hero-dot" + (index === 0 ? " active" : "");
-    dot.type = "button";
-    dot.setAttribute("aria-label", `Show image ${index + 1}`);
-    dot.addEventListener("click", () => goToHeroSlide(index));
-    heroDots.appendChild(dot);
-  });
-
-  const heroSlideEls = [...document.querySelectorAll(".hero-slide")];
-  const heroDotEls = [...document.querySelectorAll(".hero-dot")];
-  let heroIndex = 0;
-  let heroTimer;
-
-  function goToHeroSlide(index) {
-    heroSlideEls[heroIndex].classList.remove("active");
-    heroDotEls[heroIndex].classList.remove("active");
-
-    heroIndex = index;
-
-    heroSlideEls[heroIndex].classList.add("active");
-    heroDotEls[heroIndex].classList.add("active");
-    restartHeroTimer();
-  }
-
-  function restartHeroTimer() {
-    clearInterval(heroTimer);
-    heroTimer = setInterval(() => {
-      goToHeroSlide((heroIndex + 1) % heroSlideEls.length);
-    }, 4500);
-  }
-
-  restartHeroTimer();
-
-  /* ---------- PRODUCTS ---------- */
-  productCards.innerHTML = products.map(product => `
-    <article class="card reveal">
-      <div class="card-media">
-        <img
-          src="${product.img}"
-          alt="${product.name}"
-          loading="lazy"
-          onerror="this.parentElement.style.display='none'"
-        />
-      </div>
-      <div class="card-body">
-        <h3>${product.name}</h3>
-        <p>${product.desc}</p>
-      </div>
-    </article>
-  `).join("");
-
-  /* ---------- GALLERY ---------- */
-  galleryGrid.innerHTML = galleryImages.map((item, index) => `
-    <div
-      class="gallery-item reveal"
-      data-src="${item.src}"
-      data-alt="${item.alt}"
-      role="button"
-      tabindex="0"
-      aria-label="Open ${item.alt}"
+    <a
+      class="float-btn float-wa"
+      href="https://wa.me/916361450214"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp Mamta Departmental Store"
     >
-      <img src="${item.src}" alt="${item.alt}" loading="lazy" />
-    </div>
-  `).join("");
+      💬
+    </a>
 
-  /* ---------- MOBILE MENU ---------- */
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileNav = document.getElementById("mobileNav");
+    <a
+      class="float-btn float-call"
+      href="tel:+916361450214"
+      aria-label="Call Mamta Departmental Store"
+    >
+      📞
+    </a>
 
-  menuToggle.addEventListener("click", () => {
-    const open = mobileNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(open));
-    menuToggle.textContent = open ? "✕" : "☰";
-  });
+  </div>
 
-  mobileNav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.textContent = "☰";
+  <!-- BACK TO TOP -->
+
+  <button
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <!-- LIGHTBOX -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Close photo"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Store photo"
+    />
+
+  </div>
+
+  <script>
+
+    /* ==============================
+       GOOGLE MAPS
+    ============================== */
+
+    const mapsLink =
+      "https://www.google.com/maps/dir//MAMTA+DEPARTMENTAL+STORES,+%2310,+1st+Main+Rd,+Vijaya+Nagar+II+Stage,+RPC+Layout,+Vijayanagar,+Bengaluru,+Karnataka+560104/@12.9613905,77.5388665,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3bae3fbd74a9dc51:0x6fa4cb0c007a0243!2m2!1d77.542597!2d12.9670842!3e0?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D";
+
+
+    /* ==============================
+       HERO IMAGES
+    ============================== */
+
+    const heroImages = [
+
+      "images/god.jpg",
+      "images/shop.jpg",
+      "images/snacks_buiscuits.jpg",
+      "images/grocery.jpg",
+      "images/soap.jpg"
+
+    ];
+
+
+    /* ==============================
+       PRODUCTS
+    ============================== */
+
+    const products = [
+
+      {
+        name: "Rice & Grains",
+        img: "images/rice.jpg",
+        desc: "Everyday staples"
+      },
+
+      {
+        name: "Snacks & Biscuits",
+        img: "images/snacks_buiscuits.jpg",
+        desc: "Tea-time favourites"
+      },
+
+      {
+        name: "Chips",
+        img: "images/snacks.jpg",
+        desc: "Crunchy snacks"
+      },
+
+      {
+        name: "Masala",
+        img: "images/masala.jpg",
+        desc: "Spices & seasoning"
+      },
+
+      {
+        name: "Detergents",
+        img: "images/detergent.jpg",
+        desc: "Laundry essentials"
+      },
+
+      {
+        name: "Grocery",
+        img: "images/grocery.jpg",
+        desc: "Pantry essentials"
+      },
+
+      {
+        name: "Soaps",
+        img: "images/soap.jpg",
+        desc: "Bath & personal care"
+      },
+
+      {
+        name: "Noodles",
+        img: "images/noodles.jpg",
+        desc: "Quick meal options"
+      },
+
+      {
+        name: "Shaving Products",
+        img: "images/shavingproducts.jpg",
+        desc: "Grooming essentials"
+      },
+
+      {
+        name: "Daily Essentials",
+        img: "images/beauty_products.jpg",
+        desc: "Everyday personal care"
+      }
+
+    ];
+
+
+    /* ==============================
+       GALLERY
+    ============================== */
+
+    const galleryImages = [
+
+      {
+        src: "images/shop.jpg",
+        alt: "Mamta Departmental Store front"
+      },
+
+      {
+        src: "images/mamta_card.jpg",
+        alt: "Mamta Departmental Store"
+      },
+
+      {
+        src: "images/god.jpg",
+        alt: "Store products"
+      },
+
+      {
+        src: "images/grocery.jpg",
+        alt: "Grocery section"
+      },
+
+      {
+        src: "images/snacks_buiscuits.jpg",
+        alt: "Snacks and biscuits"
+      },
+
+      {
+        src: "images/soap.jpg",
+        alt: "Household and personal care products"
+      }
+
+    ];
+
+
+    const heroSlides =
+      document.getElementById("heroSlides");
+
+    const heroDots =
+      document.getElementById("heroDots");
+
+    const productCards =
+      document.getElementById("productCards");
+
+    const galleryGrid =
+      document.getElementById("galleryGrid");
+
+
+    /* ==============================
+       HERO SLIDER
+    ============================== */
+
+    heroImages.forEach((src, index) => {
+
+      const slide =
+        document.createElement("div");
+
+      slide.className =
+        "hero-slide" +
+        (index === 0 ? " active" : "");
+
+      slide.style.backgroundImage =
+        `url("${src}")`;
+
+      heroSlides.appendChild(slide);
+
+
+      const dot =
+        document.createElement("button");
+
+      dot.className =
+        "hero-dot" +
+        (index === 0 ? " active" : "");
+
+      dot.type = "button";
+
+      dot.setAttribute(
+        "aria-label",
+        `Show image ${index + 1}`
+      );
+
+      dot.addEventListener(
+        "click",
+        () => goToHeroSlide(index)
+      );
+
+      heroDots.appendChild(dot);
+
     });
-  });
 
-  /* ---------- DELIVERY ADDRESS ---------- */
-  const deliveryType = document.getElementById("deliveryType");
-  const addressWrap = document.getElementById("addressWrap");
-  const address = document.getElementById("address");
 
-  deliveryType.addEventListener("change", () => {
-    const doorDelivery = deliveryType.value === "Door Delivery";
-    addressWrap.hidden = !doorDelivery;
-    address.required = doorDelivery;
+    const heroSlideEls =
+      [
+        ...document.querySelectorAll(".hero-slide")
+      ];
 
-    if (!doorDelivery) {
-      address.value = "";
+    const heroDotEls =
+      [
+        ...document.querySelectorAll(".hero-dot")
+      ];
+
+
+    let heroIndex = 0;
+
+    let heroTimer;
+
+
+    function goToHeroSlide(index) {
+
+      heroSlideEls[
+        heroIndex
+      ].classList.remove("active");
+
+      heroDotEls[
+        heroIndex
+      ].classList.remove("active");
+
+
+      heroIndex = index;
+
+
+      heroSlideEls[
+        heroIndex
+      ].classList.add("active");
+
+      heroDotEls[
+        heroIndex
+      ].classList.add("active");
+
+
+      restartHeroTimer();
+
     }
-  });
 
-  /* ---------- WHATSAPP ORDER ---------- */
-  document.getElementById("orderForm").addEventListener("submit", event => {
-    event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const delivery = deliveryType.value;
-    const addressValue = address.value.trim();
-    const message = document.getElementById("message").value.trim();
+    function restartHeroTimer() {
 
-    const cleanPhone = phone.replace(/[^\d+]/g, "");
-    if (cleanPhone.replace(/\D/g, "").length < 10) {
-      alert("Please enter a valid phone number.");
-      return;
+      clearInterval(heroTimer);
+
+      heroTimer =
+        setInterval(() => {
+
+          goToHeroSlide(
+            (heroIndex + 1) %
+            heroSlideEls.length
+          );
+
+        }, 4500);
+
     }
 
-    let text = `Hello Mamta Store,
+
+    restartHeroTimer();
+
+
+    /* ==============================
+       PRODUCTS
+    ============================== */
+
+    productCards.innerHTML =
+      products
+        .map(product => `
+
+          <article class="card reveal">
+
+            <div class="card-media">
+
+              <img
+                src="${product.img}"
+                alt="${product.name}"
+                loading="lazy"
+                onerror="this.parentElement.style.display='none'"
+              />
+
+            </div>
+
+            <div class="card-body">
+
+              <h3>
+                ${product.name}
+              </h3>
+
+              <p>
+                ${product.desc}
+              </p>
+
+            </div>
+
+          </article>
+
+        `)
+        .join("");
+
+
+    /* ==============================
+       GALLERY
+    ============================== */
+
+    galleryGrid.innerHTML =
+      galleryImages
+        .map(item => `
+
+          <div
+            class="gallery-item reveal"
+            data-src="${item.src}"
+            data-alt="${item.alt}"
+            role="button"
+            tabindex="0"
+            aria-label="Open ${item.alt}"
+          >
+
+            <img
+              src="${item.src}"
+              alt="${item.alt}"
+              loading="lazy"
+            />
+
+          </div>
+
+        `)
+        .join("");
+
+
+    /* ==============================
+       MOBILE MENU
+    ============================== */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mobileNav =
+      document.getElementById("mobileNav");
+
+
+    menuToggle.addEventListener(
+      "click",
+      () => {
+
+        const open =
+          mobileNav.classList.toggle("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(open)
+        );
+
+        menuToggle.textContent =
+          open ? "✕" : "☰";
+
+      }
+    );
+
+
+    mobileNav
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            mobileNav.classList.remove("open");
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuToggle.textContent =
+              "☰";
+
+          }
+        );
+
+      });
+
+
+    /* ==============================
+       DELIVERY ADDRESS
+    ============================== */
+
+    const deliveryType =
+      document.getElementById(
+        "deliveryType"
+      );
+
+    const addressWrap =
+      document.getElementById(
+        "addressWrap"
+      );
+
+    const address =
+      document.getElementById(
+        "address"
+      );
+
+
+    deliveryType.addEventListener(
+      "change",
+      () => {
+
+        const doorDelivery =
+          deliveryType.value ===
+          "Door Delivery";
+
+
+        addressWrap.hidden =
+          !doorDelivery;
+
+
+        address.required =
+          doorDelivery;
+
+
+        if (!doorDelivery) {
+
+          address.value = "";
+
+        }
+
+      }
+    );
+
+
+    /* ==============================
+       WHATSAPP ORDER
+    ============================== */
+
+    document
+      .getElementById("orderForm")
+      .addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const name =
+            document
+              .getElementById("name")
+              .value
+              .trim();
+
+
+          const phone =
+            document
+              .getElementById("phone")
+              .value
+              .trim();
+
+
+          const delivery =
+            deliveryType.value;
+
+
+          const addressValue =
+            address.value.trim();
+
+
+          const message =
+            document
+              .getElementById("message")
+              .value
+              .trim();
+
+
+          const cleanPhone =
+            phone.replace(
+              /[^\d+]/g,
+              ""
+            );
+
+
+          if (
+            cleanPhone.replace(
+              /\D/g,
+              ""
+            ).length < 10
+          ) {
+
+            alert(
+              "Please enter a valid phone number."
+            );
+
+            return;
+
+          }
+
+
+          let text =
+`Hello Mamta Store,
 
 Name: ${name}
 Phone: ${phone}
 Delivery: ${delivery}`;
 
-    if (delivery === "Door Delivery") {
-      text += `\nAddress: ${addressValue}`;
-    }
 
-    text += `
+          if (
+            delivery === "Door Delivery"
+          ) {
+
+            text +=
+              `\nAddress: ${addressValue}`;
+
+          }
+
+
+          text += `
 
 Order:
 ${message}`;
 
-    const url =
-      "https://wa.me/916361450214?text=" +
-      encodeURIComponent(text);
 
-    window.open(url, "_blank", "noopener,noreferrer");
-  });
+          const url =
+            "https://wa.me/916361450214?text=" +
+            encodeURIComponent(text);
 
-  /* ---------- LIGHTBOX ---------- */
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const lightboxClose = document.getElementById("lightboxClose");
 
-  function openLightbox(src, alt) {
-    lightboxImage.src = src;
-    lightboxImage.alt = alt;
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.classList.add("no-scroll");
-  }
+          window.open(
+            url,
+            "_blank",
+            "noopener,noreferrer"
+          );
 
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImage.src = "";
-    document.body.classList.remove("no-scroll");
-  }
-
-  document.querySelectorAll(".gallery-item").forEach(item => {
-    item.addEventListener("click", () => {
-      openLightbox(item.dataset.src, item.dataset.alt);
-    });
-
-    item.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openLightbox(item.dataset.src, item.dataset.alt);
-      }
-    });
-  });
-
-  lightboxClose.addEventListener("click", closeLightbox);
-
-  lightbox.addEventListener("click", event => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
-  });
-
-  /* ---------- SCROLL REVEAL ---------- */
-  const revealItems = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
         }
+      );
+
+
+    /* ==============================
+       LIGHTBOX
+    ============================== */
+
+    const lightbox =
+      document.getElementById(
+        "lightbox"
+      );
+
+    const lightboxImage =
+      document.getElementById(
+        "lightboxImage"
+      );
+
+    const lightboxClose =
+      document.getElementById(
+        "lightboxClose"
+      );
+
+
+    function openLightbox(
+      src,
+      alt
+    ) {
+
+      lightboxImage.src =
+        src;
+
+      lightboxImage.alt =
+        alt;
+
+      lightbox.classList.add(
+        "open"
+      );
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "no-scroll"
+      );
+
+    }
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove(
+        "open"
+      );
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      lightboxImage.src =
+        "";
+
+      document.body.classList.remove(
+        "no-scroll"
+      );
+
+    }
+
+
+    document
+      .querySelectorAll(".gallery-item")
+      .forEach(item => {
+
+        item.addEventListener(
+          "click",
+          () => {
+
+            openLightbox(
+              item.dataset.src,
+              item.dataset.alt
+            );
+
+          }
+        );
+
+
+        item.addEventListener(
+          "keydown",
+          event => {
+
+            if (
+              event.key === "Enter" ||
+              event.key === " "
+            ) {
+
+              event.preventDefault();
+
+              openLightbox(
+                item.dataset.src,
+                item.dataset.alt
+              );
+
+            }
+
+          }
+        );
+
       });
-    },
-    { threshold: 0.08 }
-  );
 
-  revealItems.forEach(item => observer.observe(item));
 
-  /* ---------- BACK TO TOP ---------- */
-  const backTop = document.getElementById("backTop");
+    lightboxClose.addEventListener(
+      "click",
+      closeLightbox
+    );
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      backTop.classList.toggle("show", window.scrollY > 550);
-    },
-    { passive: true }
-  );
 
-  backTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
+    lightbox.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target === lightbox
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    /* ==============================
+       SCROLL REVEAL
+    ============================== */
+
+    const revealItems =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.08
+        }
+      );
+
+
+    revealItems.forEach(
+      item => observer.observe(item)
+    );
+
+
+    /* ==============================
+       BACK TO TOP
+    ============================== */
+
+    const backTop =
+      document.getElementById(
+        "backTop"
+      );
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        backTop.classList.toggle(
+          "show",
+          window.scrollY > 550
+        );
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    backTop.addEventListener(
+      "click",
+      () => {
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
